@@ -1,0 +1,22 @@
+/*
+ * CFile1.c
+ *
+ * Created: 06-May-14 19:44:05
+ *  Author: Kris
+ */ 
+/* TODO list
+
+first priority
+	1) læs op på hvad vi skal bruge for at modtage fra pc og sende på atmega32
+	2) find ud af om case switch virker mens eller efter data modtaget.
+	 
+alfa state priority
+	1) test data send/modtag (multimeter eller oscillo)
+
+
+beta state priority
+	1) optimering
+
+
+
+*/
