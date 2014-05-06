@@ -9,7 +9,10 @@
 first priority
 	1) læs op på hvad vi skal bruge for at modtage fra pc og sende på atmega32
 	2) find ud af om case switch virker mens eller efter data modtaget.
-	 
+	3) læs op på triggers og interrupts
+	4) find input/output porte og pins.
+
+
 alfa state priority
 	1) test data send/modtag (multimeter eller oscillo)
 
