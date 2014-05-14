@@ -27,7 +27,6 @@ ISR (USART_RXC_vect)
 		if (buffer[2] == '0')
 		{
 			taendlys(buffer[1]);
-			SendString("Lol\r\n");
 		}
 		else if (buffer[2]== 'f')
 		{
