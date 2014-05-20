@@ -36,6 +36,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../uart_test.c \
 ../Main.c \
 ../uart_int.c \
 ../X10send.c
@@ -48,21 +49,25 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+uart_test.o \
 Main.o \
 uart_int.o \
 X10send.o
 
 OBJS_AS_ARGS +=  \
+uart_test.o \
 Main.o \
 uart_int.o \
 X10send.o
 
 C_DEPS +=  \
+uart_test.d \
 Main.d \
 uart_int.d \
 X10send.d
 
 C_DEPS_AS_ARGS +=  \
+uart_test.d \
 Main.d \
 uart_int.d \
 X10send.d
@@ -78,6 +83,8 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

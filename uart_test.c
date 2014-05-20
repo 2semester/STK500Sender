@@ -4,6 +4,10 @@
  * Created: 20-05-2014 21:38:28
  *  Author: kristoffer
  */ 
+#include <avr/io.h>
+#include <stdlib.h>
+#include "uart_test.h"
+#include "uart_int.h"
 /*************************************************************************
 Awaits transmitter-register ready.
 Then it send the character.
@@ -36,4 +40,3 @@ void SendString(char* Streng)
     Streng++;
   }
 }
-*/

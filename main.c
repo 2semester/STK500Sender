@@ -68,7 +68,7 @@ if(ready == 1)
 ISR (USART_RXC_vect)
 { 
 	char Buffer[4];
-	ReadString(&Buffer,ARRAY);5w5w
+	ReadString(&Buffer,ARRAY);
 	if (Buffer[0] == '!' || Buffer[0] == '?')
 	{
 		if (Buffer[2] == '0')

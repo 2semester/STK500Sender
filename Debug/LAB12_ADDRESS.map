@@ -10,16 +10,16 @@ c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-t
                               Main.o (__do_copy_data)
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
                               Main.o (__do_clear_bss)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
-                              uart_int.o (__itoa_ncheck)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
-                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o) (__utoa_common)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
-                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o) (strrev)
 
 Discarded input sections
 
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32.o
+ .text          0x00000000        0x0 uart_test.o
+ .bss           0x00000000        0x0 uart_test.o
+ .text.SendChar
+                0x00000000        0x8 uart_test.o
+ .text.SendString
+                0x00000000       0x1e uart_test.o
  .text          0x00000000        0x0 Main.o
  .bss           0x00000000        0x0 Main.o
  .bss.Buffer    0x00000000        0x4 Main.o
@@ -27,12 +27,6 @@ Discarded input sections
  .bss           0x00000000        0x0 uart_int.o
  .text.CharReady
                 0x00000000        0x6 uart_int.o
- .text.SendChar
-                0x00000000        0x8 uart_int.o
- .text.SendString
-                0x00000000       0x1e uart_int.o
- .text.SendInteger
-                0x00000000       0x3a uart_int.o
  .text          0x00000000        0x0 X10send.o
  .bss           0x00000000        0x0 X10send.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_udivmodsi4.o)
@@ -107,18 +101,6 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
- .text.avr-libc
-                0x00000000       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
- .text.avr-libc
-                0x00000000       0x34 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
- .text.avr-libc
-                0x00000000       0x20 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
 
 Memory Configuration
 
@@ -135,6 +117,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32.o
+LOAD uart_test.o
 LOAD Main.o
 LOAD uart_int.o
 LOAD X10send.o
@@ -378,6 +361,7 @@ END GROUP
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 uart_test.o
  .data          0x00800060        0x0 Main.o
  .data          0x00800060        0x0 uart_int.o
  .data          0x00800060        0x0 X10send.o
@@ -386,9 +370,6 @@ END GROUP
  .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_tablejump.o)
  .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_copy_data.o)
  .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr5\libgcc.a(_clear_bss.o)
- .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
- .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
- .data          0x00800060        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
  *(.data*)
  .data.flag     0x00800060        0x1 Main.o
                 0x00800060                flag
@@ -463,8 +444,9 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 Main.o
+ .comment       0x00000000       0x30 uart_test.o
                                  0x31 (size before relaxing)
+ .comment       0x00000000       0x31 Main.o
  .comment       0x00000000       0x31 uart_int.o
  .comment       0x00000000       0x31 X10send.o
 
@@ -483,56 +465,65 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xb0
+.debug_aranges  0x00000000       0xc0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x30 Main.o
+                0x00000000       0x28 uart_test.o
  .debug_aranges
-                0x00000030       0x50 uart_int.o
+                0x00000028       0x30 Main.o
  .debug_aranges
-                0x00000080       0x30 X10send.o
+                0x00000058       0x38 uart_int.o
+ .debug_aranges
+                0x00000090       0x30 X10send.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x652
+.debug_info     0x00000000      0x57f
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x217 Main.o
- .debug_info    0x00000217      0x312 uart_int.o
- .debug_info    0x00000529      0x129 X10send.o
+ .debug_info    0x00000000       0xd5 uart_test.o
+ .debug_info    0x000000d5      0x217 Main.o
+ .debug_info    0x000002ec      0x16a uart_int.o
+ .debug_info    0x00000456      0x129 X10send.o
 
-.debug_abbrev   0x00000000      0x3bb
+.debug_abbrev   0x00000000      0x35c
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x11f Main.o
- .debug_abbrev  0x0000011f      0x1aa uart_int.o
- .debug_abbrev  0x000002c9       0xf2 X10send.o
+ .debug_abbrev  0x00000000       0x9f uart_test.o
+ .debug_abbrev  0x0000009f      0x11f Main.o
+ .debug_abbrev  0x000001be       0xac uart_int.o
+ .debug_abbrev  0x0000026a       0xf2 X10send.o
 
-.debug_line     0x00000000      0x469
+.debug_line     0x00000000      0x4dd
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x1bc Main.o
- .debug_line    0x000001bc      0x159 uart_int.o
- .debug_line    0x00000315      0x154 X10send.o
+ .debug_line    0x00000000       0xc7 uart_test.o
+ .debug_line    0x000000c7      0x1bc Main.o
+ .debug_line    0x00000283      0x106 uart_int.o
+ .debug_line    0x00000389      0x154 X10send.o
 
-.debug_frame    0x00000000      0x204
+.debug_frame    0x00000000      0x1f8
  *(.debug_frame)
- .debug_frame   0x00000000       0xe4 Main.o
- .debug_frame   0x000000e4       0xcc uart_int.o
- .debug_frame   0x000001b0       0x54 X10send.o
+ .debug_frame   0x00000000       0x40 uart_test.o
+ .debug_frame   0x00000040       0xe4 Main.o
+ .debug_frame   0x00000124       0x80 uart_int.o
+ .debug_frame   0x000001a4       0x54 X10send.o
 
-.debug_str      0x00000000      0x297
+.debug_str      0x00000000      0x273
  *(.debug_str)
- .debug_str     0x00000000      0x178 Main.o
+ .debug_str     0x00000000      0x132 uart_test.o
+                                0x16b (size before relaxing)
+ .debug_str     0x00000132       0x77 Main.o
                                 0x1b8 (size before relaxing)
- .debug_str     0x00000178       0xb9 uart_int.o
-                                0x21c (size before relaxing)
- .debug_str     0x00000231       0x66 X10send.o
+ .debug_str     0x000001a9       0x64 uart_int.o
+                                0x1b9 (size before relaxing)
+ .debug_str     0x0000020d       0x66 X10send.o
                                 0x1a3 (size before relaxing)
 
-.debug_loc      0x00000000      0x507
+.debug_loc      0x00000000      0x474
  *(.debug_loc)
- .debug_loc     0x00000000      0x1c9 Main.o
- .debug_loc     0x000001c9      0x302 uart_int.o
- .debug_loc     0x000004cb       0x3c X10send.o
+ .debug_loc     0x00000000       0x81 uart_test.o
+ .debug_loc     0x00000081      0x1c9 Main.o
+ .debug_loc     0x0000024a      0x1ee uart_int.o
+ .debug_loc     0x00000438       0x3c X10send.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -554,8 +545,9 @@ END GROUP
 
 .debug_ranges   0x00000000       0x80
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x20 Main.o
- .debug_ranges  0x00000020       0x40 uart_int.o
+ .debug_ranges  0x00000000       0x18 uart_test.o
+ .debug_ranges  0x00000018       0x20 Main.o
+ .debug_ranges  0x00000038       0x28 uart_int.o
  .debug_ranges  0x00000060       0x20 X10send.o
 
 .debug_macro
