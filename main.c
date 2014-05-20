@@ -11,10 +11,9 @@
 * Henning Hargaard 27/11 2013               *
 *********************************************/
 #include <avr/io.h> // std input output lib
-#include <avr/interrupt.h> // interrupt enable
+#include <avr/interrupt.h> // interrupt enableta
 #include <stdlib.h>  // itoa
 #include "uart_int.h"
-#include "led.h"
 #include "main.h"
 #include "X10send.h"
 
@@ -31,7 +30,7 @@ ISR(INT2_vect) //INT2 til 'flag'
          ready = 2 on/off
          ready = 3 carriage return
          */
-         if(data != temp && ready = 0)
+         if(DataBuffer != temp && ready = 0)
          {
                  for(int i = 0;i < 4; i++)
 				 {
@@ -124,26 +123,4 @@ int main(){
 		// Her kunne man lave noget "fornuftigt"
 	}
 
-}
-
-void taendlys(int ID){
-	
-	// Toggle aktuelle lysdiode
-	turnOnLED(ID - '0');
-	// Send streng "LED nummer x er toggled"
-	SendString("LED nummer ");
-	SendChar(ID);
-	SendString(" er toggled\r\n");
-	
-}
-
-void sluklys(int ID){
-	
-	// Toggle aktuelle lysdiode
-	turnOffLED(ID - '0');
-	// Send streng "LED nummer x er toggled"
-	SendString("LED nummer ");
-	SendChar(ID);
-	SendString(" er toggled\r\n");
-	
 }

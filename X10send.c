@@ -25,72 +25,7 @@ volatile int ready = 0;
 int temp[9] = 0;
 int failsafe = 0;
 int DataBuffer[33];
- ISR(INT2_vect) //INT2 til 'flag'
- {
-         flag++;
-         /* todo list
-         skal måske lave en if sætning til når flag skifter fra 255 til 0 så dan starter på 2
-         import af data og sætte ready = 1
-         
-         /* todo måske hvis jeg ikke sender et stort array
-         ready = 0 ?/!
-         ready = 1 unit
-         ready = 2 on/off
-         ready = 3 carriage return
-         */
-         if(data != temp && ready = 0)
-         {
-                 for(int i = 0;i < 4; i++)
-				 {
-					 DataBuffer[32];
-					 itoa(DataBuffer, Buffer[i], 2)
-					 DataBuffer = DataBuffer >> 8;
-				 }
-				 
-                 ready = 1;
-         }
-         
-         if (ready = 1)
-         {
-         
-                 if(flag % 2 == 0)
-                 {
-                         if (DataBuffer ^ 0b00000001)
-                         {
-                                 Burst();
-                                 Failsafe = 1;
-                                 sendcycel++;
-                         }
-                                 
-                 }
-                 
-                 if(flag % 2 == 1)
-                 {
-                        if(DataBuffer & 0b00000001)
-                        {
-                                if (failsafe != 1)
-                                {
-                                Burst();
-                                sendcycel++;
-                                DataBuffer = DataBuffer >> 1;
-								}								
-						}
-                 }
-				 if (failsafe = 1)
-				 {
-					 DataBuffer = DataBuffer >> 1;
-					 failsafe = 0;
-				 }
-		 }
-         
-         if (sendcycel = 8)
-         {
-                 ready = 0;
-         }
-         
-         
-       
- }
+ 
  
 void Burst(void)
 {

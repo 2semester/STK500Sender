@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.1</ProjectVersion>
+    <ProjectVersion>6.2</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
     <ProjectGuid>{edf534ed-0a73-4ac4-a240-fd0610a6f998}</ProjectGuid>
     <avrdevice>ATmega32</avrdevice>
@@ -97,12 +97,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Main.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="led.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="led.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.h">
