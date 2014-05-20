@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>6.1</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
-    <ProjectGuid>{e800772d-3d39-4875-bd4f-bfe15ed2342a}</ProjectGuid>
+    <ProjectGuid>{edf534ed-0a73-4ac4-a240-fd0610a6f998}</ProjectGuid>
     <avrdevice>ATmega32</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -12,19 +12,19 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>GccApplication1</AssemblyName>
-    <Name>GccApplication1</Name>
-    <RootNamespace>GccApplication1</RootNamespace>
+    <AssemblyName>LAB12_ADDRESS</AssemblyName>
+    <Name>LAB12_ADDRESS</Name>
+    <RootNamespace>LAB12_ADDRESS</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
-    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data xmlns="">
         <options />
@@ -93,22 +93,28 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="TODO">
+    <Compile Include="X10send.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="State.c">
+    <Compile Include="Main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Commands.c">
+    <Compile Include="led.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="main.c">
+    <Compile Include="led.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Commands.h">
+    <Compile Include="main.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="State.h">
+    <Compile Include="uart_int.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart_int.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="X10send.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
