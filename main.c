@@ -60,11 +60,12 @@ if(ready == 1)
     if (sendcounter == 5)
     {
 		ready = 0;
-		DataBuffer[0] = '0';
-		DataBuffer[1] = '0';
-		DataBuffer[2] = '0';
-		DataBuffer[3] = '0';
-		DataBuffer[4] = '0';
+		DataBuffer[0] = '\0';
+		DataBuffer[1] = '\0';
+		DataBuffer[2] = '\0';
+		DataBuffer[3] = '\0';
+		DataBuffer[4] = '\0';
+		DataBuffer[5] = '\0';
 	}		
 }
 } 
@@ -91,7 +92,8 @@ ISR (USART_RXC_vect)
 					DataBuffer[1] = '0';
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
-					DataBuffer[4] = '1'; 
+					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0'; 
 					break;
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,1}; 
@@ -99,7 +101,8 @@ ISR (USART_RXC_vect)
 					DataBuffer[1] = '0';
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
-					DataBuffer[4] = '1';				 
+					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';				 
 					break;
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,1};  
@@ -108,6 +111,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,1}; 
@@ -116,6 +120,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,1}; 
@@ -124,6 +129,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,1};  
@@ -132,6 +138,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,1}; 
@@ -140,6 +147,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,1};  
@@ -148,6 +156,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,1};  
@@ -156,6 +165,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,1}; 
@@ -164,6 +174,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,1};  
@@ -172,6 +183,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,1}; 
@@ -180,6 +192,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'd' ://DataBuffer[5] = {1,1,0,1,1};
@@ -189,6 +202,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'e' :// DataBuffer[5] = {1,1,1,0,1};  
@@ -197,6 +211,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '1';
+					DataBuffer[5] = '\0';
 					break;
 			}
 		}
@@ -211,6 +226,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,0};
@@ -219,6 +235,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,0};
@@ -227,6 +244,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,0};
@@ -235,6 +253,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,0};
@@ -243,6 +262,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,0};
@@ -251,6 +271,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,0};
@@ -259,6 +280,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,0};
@@ -267,6 +289,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,0};
@@ -275,6 +298,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,0};
@@ -283,6 +307,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,0};
@@ -291,6 +316,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,0};
@@ -299,6 +325,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'd' ://DataBuffer[5] = {1,1,0,1,0};
@@ -307,6 +334,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '0';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'e' :// DataBuffer[5] = {1,1,1,0,0};
@@ -315,6 +343,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '0';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 
 				case 'f' ://DataBuffer[5] = {1,1,1,1,0};
@@ -323,6 +352,7 @@ ISR (USART_RXC_vect)
 					DataBuffer[2] = '1';
 					DataBuffer[3] = '1';
 					DataBuffer[4] = '0';
+					DataBuffer[5] = '\0';
 					break;
 			}
 		}
