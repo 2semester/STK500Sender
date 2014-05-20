@@ -68,7 +68,7 @@ if(ready == 1)
 ISR (USART_RXC_vect)
 { 
 	char Buffer[4];
-	ReadString(&Buffer,ARRAY);
+	ReadString(&Buffer,ARRAY);5w5w
 	if (Buffer[0] == '!' || Buffer[0] == '?')
 	{
 		if (Buffer[2] == '0')
@@ -321,7 +321,7 @@ ISR (USART_RXC_vect)
 }
 
 
-void main()
+int main()
 {
 	// Initialize USART (with RX interrupt enable)
 	InitUART(9600, 8, 1);

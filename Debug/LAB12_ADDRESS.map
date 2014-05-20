@@ -495,17 +495,17 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x64e
+.debug_info     0x00000000      0x652
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x213 Main.o
- .debug_info    0x00000213      0x312 uart_int.o
- .debug_info    0x00000525      0x129 X10send.o
+ .debug_info    0x00000000      0x217 Main.o
+ .debug_info    0x00000217      0x312 uart_int.o
+ .debug_info    0x00000529      0x129 X10send.o
 
-.debug_abbrev   0x00000000      0x3b9
+.debug_abbrev   0x00000000      0x3bb
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x11d Main.o
- .debug_abbrev  0x0000011d      0x1aa uart_int.o
- .debug_abbrev  0x000002c7       0xf2 X10send.o
+ .debug_abbrev  0x00000000      0x11f Main.o
+ .debug_abbrev  0x0000011f      0x1aa uart_int.o
+ .debug_abbrev  0x000002c9       0xf2 X10send.o
 
 .debug_line     0x00000000      0x469
  *(.debug_line .debug_line.* .debug_line_end)

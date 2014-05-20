@@ -107,6 +107,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="uart_test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart_test.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="X10send.h">
       <SubType>compile</SubType>
     </Compile>
