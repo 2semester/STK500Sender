@@ -13,4 +13,5 @@ void CTCBurst(void);
 void switchSetCTC(void);
 void Send_1(void);
 void Send_0(void);
-#endif /* INCFILE1_H_ */
+void Burst();
+#endif

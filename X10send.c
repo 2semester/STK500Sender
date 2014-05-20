@@ -22,7 +22,9 @@ og initieret til 1 pga vi starter på 10 = 1 burst.
  
 void Burst(void)
 {
-       
+    DDRB |=(1<<PB3);
+    _delay_ms(3);
+	DDRB |=(0<<PB3);	   
 }
  
  

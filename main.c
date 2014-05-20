@@ -43,7 +43,7 @@ ISR(INT2_vect) //INT2 til 'flag'
                         }
 						else
 						{
-							//Burst();
+							Burst();
 						}
                                  
                  }
@@ -52,7 +52,7 @@ ISR(INT2_vect) //INT2 til 'flag'
                  {
 					if (DataBuffer[sendcounter] == 0)
 					{
-						//Burst();
+						Burst();
 					}
 					else
 					{
@@ -97,7 +97,6 @@ int main(){
 	// Initialize USART (with RX interrupt enable)
 	InitUART(9600, 8, 1);
 	InitAtmel();
-	switchSetCTC();
 	// Global interrupt enable
 	sei();
 	while (1)
