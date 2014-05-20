@@ -331,7 +331,6 @@ void main()
 	sei();
 	while (1)
 	{
-		//nothing
+		//endless nothing
 	}
-	
 }

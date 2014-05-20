@@ -17,17 +17,12 @@ c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-t
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(strrev.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o) (strrev)
 
-Allocating common symbols
-Common symbol       size              file
-
-DataBuffer          0xa               Main.o
-Buffer              0x4               Main.o
-
 Discarded input sections
 
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1051/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32.o
  .text          0x00000000        0x0 Main.o
  .bss           0x00000000        0x0 Main.o
+ .bss.Buffer    0x00000000        0x4 Main.o
  .text          0x00000000        0x0 uart_int.o
  .bss           0x00000000        0x0 uart_int.o
  .text.CharReady
@@ -405,29 +400,29 @@ END GROUP
                 0x00800062                _edata = .
                 0x00800062                PROVIDE (__data_end, .)
 
-.bss            0x00800062       0x12
+.bss            0x00800062        0xe
                 0x00800062                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.ready     0x00800062        0x2 Main.o
-                0x00800062                ready
+ .bss.DataBuffer
+                0x00800062        0xa Main.o
+                0x00800062                DataBuffer
+ .bss.ready     0x0080006c        0x2 Main.o
+                0x0080006c                ready
  .bss.sendcounter
-                0x00800064        0x2 Main.o
-                0x00800064                sendcounter
+                0x0080006e        0x2 Main.o
+                0x0080006e                sendcounter
  *(COMMON)
- COMMON         0x00800066        0xe Main.o
-                0x00800066                DataBuffer
-                0x00800070                Buffer
-                0x00800074                PROVIDE (__bss_end, .)
+                0x00800070                PROVIDE (__bss_end, .)
                 0x000009d6                __data_load_start = LOADADDR (.data)
                 0x000009d8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800074        0x0
-                0x00800074                PROVIDE (__noinit_start, .)
+.noinit         0x00800070        0x0
+                0x00800070                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800074                PROVIDE (__noinit_end, .)
-                0x00800074                _end = .
-                0x00800074                PROVIDE (__heap_start, .)
+                0x00800070                PROVIDE (__noinit_end, .)
+                0x00800070                _end = .
+                0x00800070                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
