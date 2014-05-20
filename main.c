@@ -77,10 +77,10 @@ ISR (USART_RXC_vect){
 	{
 		for(int i = 0;i < 4; i++)
 		{
-			int tmpBuffer[9];
-			itoa(tmpBuffer, Buffer[i], 2);
-			DataBuffer[i] = tmpBuffer;
-			SendString("lol");		//CHECK OM DET ER MUGLIGT
+			char tmpBuffer[9];
+			// konverter char i Buffer til binaer i tmpBuffer
+			// Fyld tmpBuffer i DataBuffer
+			SendString("lol");
 			SendString(DataBuffer);
 		}
 	ready = 1;
