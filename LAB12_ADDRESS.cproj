@@ -93,7 +93,10 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LAB12_1.c">
+    <Compile Include="X10send.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="led.c">
@@ -109,6 +112,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="uart_int.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="X10send.c">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

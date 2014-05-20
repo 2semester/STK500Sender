@@ -151,3 +151,4 @@ void ReadString(char* Buffer, int MaxLenght)
 	}
 	*Buffer = '\0';
 }
+

@@ -34,6 +34,8 @@ unsigned char mask;
     // Dan maske på basis af parameteren (led_nr)
     mask = ~(0b00000001 << led_nr);
     // Tænd den aktuelle lysdiode (de andre ændres ikke)
+   
+   
     PORTC = PORTC & mask;
   }   
 }
