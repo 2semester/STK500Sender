@@ -20,32 +20,42 @@ ISR(INT2_vect)
 flag++;
 if(ready == 1)
 {
-	if(flag % 2 == 0)
+	if (flag % 2 == 1) // sikre at vi ikke sender et 1 og 0 i samme cycel
+	{
+		failsafe = 0;
+	}
+
+    if(flag % 2 == 1)  // 1 cycel
+    {
+	    if (DataBuffer[sendcounter] == 1)
+	    {
+		    Burst();
+		    sendcounter++;
+		    failsafe = 1;
+	    }
+	    else
+	    {
+		    //nothing
+	    }
+	    
+    }
+
+	if(flag % 2 == 0) // 0 cycel
     {
 		if (DataBuffer[sendcounter] == 0)
         {
-			//nothing
+				if (failsafe == 0)
+				{
+					Burst();
+					sendcounter++;
+				}
         }
 		else
 		{
-			Burst();
-		}
-    }
-                 
-    if(flag % 2 == 1)
-	{
-		if (DataBuffer[sendcounter] == 1)
-		{
-			Burst();
-		}
-		else
-		{
 			//nothing
 		}
-		sendcounter++;
-	}
-
-         
+    }
+       
     if (sendcounter == 5)
     {
 		ready = 0;
