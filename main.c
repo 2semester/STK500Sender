@@ -9,7 +9,7 @@
 når der kommer et zero crossing interrupt
 flag tælles 1 op
 der checkes for om ny data er modtaget
-hvis den sidst har sendt et 1 er failsafe 1 og den sættes til 0 så vi kan sende et 0 denne gang (dette bruges for at vi ikke sender både 1 og 0 i 1 cycel og derved laver et falsk data burst.) 
+hvis den sidst har sendt et 1 er failsafe 1 og den sættes til 0 så vi kan sende et 0 denne gang (dette bruges for at vi ikke sender både 1 og 0 i en cycel og derved laver et falsk data burst.) 
 der checkes for om det er en 1 eller 0 cycel
 hvis det er et 0 cycel og en 0 bit. og failsafe = 0 sendes der et burst ellers sker der ingenting 
 hvis det er et 1 cycel og en 1 bit. sendes der et burst ellers sker der ingenting 
