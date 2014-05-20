@@ -66,6 +66,7 @@ unsigned int TempUBRR;
 /*************************************************************************
   Returns 0 (FALSE), if the UART has NOT received a new character.
   Returns value <> 0 (TRUE), if the UART HAS received a new character.
+  not in use!
 *************************************************************************/
 unsigned char CharReady()
 {
@@ -73,8 +74,8 @@ unsigned char CharReady()
 }
 
 /*************************************************************************
-Awaits new character received.
-Then this character is returned.
+	Awaits new character received.
+	Then this character is returned.
 *************************************************************************/
 char ReadChar()
 {
@@ -84,7 +85,17 @@ char ReadChar()
   // Then return it
   return UDR;
 }
-
+/*************************************************************************
+ReadString tager en char bufferpointer,  og en maxLenght
+først initeres den en char Nextchar og en stringLenght
+derefter ligger den ReadChar in i NextChar 
+så køre den et loop til den når carriage return og stringLenght er mindre end maxlenght
+i loopet 
+ligger den nextChar i +1 plads i bufferen 
+tæller stringlenght en op
+sætter ReadChar ind i NextChar 
+og når den er færdig med loopet ligger den NULL ind i buffern
+*************************************************************************/
 void ReadString(char* Buffer, int MaxLenght)
 {
 	char NextChar;
