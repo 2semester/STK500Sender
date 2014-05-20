@@ -14,7 +14,7 @@ der checkes for om det er en 1 eller 0 cycel
 hvis det er et 0 cycel og en 0 bit. og failsafe = 0 sendes der et burst ellers sker der ingenting 
 hvis det er et 1 cycel og en 1 bit. sendes der et burst ellers sker der ingenting 
 når der er sent et burst tælles send counteren en op og vi kikker på den næste plads
-når 5 bit er sent sættes ready til 0 og vi stopper med at sende.
+når 5 bit er sent sættes ready til 0 samt '\0' sendes for indikere at vi har en tom databuffer så vi stopper med at sende.
 ----------------------------------------------------------------------*/
 ISR(INT2_vect)
 {
@@ -61,11 +61,6 @@ if(ready == 1)
     {
 		ready = 0;
 		DataBuffer[0] = '\0';
-		DataBuffer[1] = '\0';
-		DataBuffer[2] = '\0';
-		DataBuffer[3] = '\0';
-		DataBuffer[4] = '\0';
-		DataBuffer[5] = '\0';
 	}		
 }
 } 

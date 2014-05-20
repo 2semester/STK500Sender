@@ -3,29 +3,29 @@ LAB12_ADDRESS.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000007b2  00000000  00000000  00000094  2**1
+  0 .text         00000810  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000006  00800060  000007b2  00000846  2**0
+  1 .data         00000008  00800060  00000810  000008a4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000006  00800066  00800066  0000084c  2**0
+  2 .bss          00000006  00800068  00800068  000008ac  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000084c  2**0
+  3 .comment      00000030  00000000  00000000  000008ac  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 000000c0  00000000  00000000  0000087c  2**0
+  4 .debug_aranges 000000c0  00000000  00000000  000008dc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000591  00000000  00000000  0000093c  2**0
+  5 .debug_info   00000591  00000000  00000000  0000099c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000035c  00000000  00000000  00000ecd  2**0
+  6 .debug_abbrev 0000035c  00000000  00000000  00000f2d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000004e7  00000000  00000000  00001229  2**0
+  7 .debug_line   000004ff  00000000  00000000  00001289  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000001f8  00000000  00000000  00001710  2**2
+  8 .debug_frame  000001f8  00000000  00000000  00001788  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000027c  00000000  00000000  00001908  2**0
+  9 .debug_str    0000027c  00000000  00000000  00001980  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000474  00000000  00000000  00001b84  2**0
+ 10 .debug_loc    00000474  00000000  00000000  00001bfc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000080  00000000  00000000  00001ff8  2**0
+ 11 .debug_ranges 00000080  00000000  00000000  00002070  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -64,10 +64,10 @@ void SendString(char* Streng)
   1c:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   20:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   24:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
-  28:	0c 94 93 03 	jmp	0x726	; 0x726 <__vector_10>
+  28:	0c 94 c2 03 	jmp	0x784	; 0x784 <__vector_10>
   2c:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   30:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
-  34:	0c 94 3d 01 	jmp	0x27a	; 0x27a <__vector_13>
+  34:	0c 94 32 01 	jmp	0x264	; 0x264 <__vector_13>
   38:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   3c:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   40:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
@@ -75,113 +75,113 @@ void SendString(char* Streng)
   48:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   4c:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
   50:	0c 94 b2 00 	jmp	0x164	; 0x164 <__bad_interrupt>
-  54:	70 01       	movw	r14, r0
-  56:	7d 01       	movw	r14, r26
-  58:	8a 01       	movw	r16, r20
-  5a:	97 01       	movw	r18, r14
-  5c:	a4 01       	movw	r20, r8
-  5e:	b1 01       	movw	r22, r2
-  60:	be 01       	movw	r22, r28
-  62:	cb 01       	movw	r24, r22
-  64:	d8 01       	movw	r26, r16
-  66:	25 02       	muls	r18, r21
-  68:	25 02       	muls	r18, r21
-  6a:	25 02       	muls	r18, r21
-  6c:	25 02       	muls	r18, r21
-  6e:	25 02       	muls	r18, r21
-  70:	25 02       	muls	r18, r21
-  72:	25 02       	muls	r18, r21
-  74:	25 02       	muls	r18, r21
-  76:	25 02       	muls	r18, r21
-  78:	25 02       	muls	r18, r21
-  7a:	25 02       	muls	r18, r21
-  7c:	25 02       	muls	r18, r21
-  7e:	25 02       	muls	r18, r21
-  80:	25 02       	muls	r18, r21
-  82:	25 02       	muls	r18, r21
-  84:	25 02       	muls	r18, r21
-  86:	25 02       	muls	r18, r21
-  88:	25 02       	muls	r18, r21
-  8a:	25 02       	muls	r18, r21
-  8c:	25 02       	muls	r18, r21
-  8e:	25 02       	muls	r18, r21
-  90:	25 02       	muls	r18, r21
-  92:	25 02       	muls	r18, r21
-  94:	25 02       	muls	r18, r21
-  96:	25 02       	muls	r18, r21
-  98:	25 02       	muls	r18, r21
-  9a:	25 02       	muls	r18, r21
-  9c:	25 02       	muls	r18, r21
-  9e:	25 02       	muls	r18, r21
-  a0:	25 02       	muls	r18, r21
-  a2:	25 02       	muls	r18, r21
-  a4:	25 02       	muls	r18, r21
-  a6:	25 02       	muls	r18, r21
-  a8:	25 02       	muls	r18, r21
-  aa:	25 02       	muls	r18, r21
-  ac:	25 02       	muls	r18, r21
-  ae:	25 02       	muls	r18, r21
-  b0:	25 02       	muls	r18, r21
-  b2:	25 02       	muls	r18, r21
-  b4:	e5 01       	movw	r28, r10
-  b6:	f2 01       	movw	r30, r4
-  b8:	ff 01       	movw	r30, r30
-  ba:	0c 02       	muls	r16, r28
-  bc:	19 02       	muls	r17, r25
-  be:	31 02       	muls	r19, r17
-  c0:	3e 02       	muls	r19, r30
-  c2:	4b 02       	muls	r20, r27
-  c4:	58 02       	muls	r21, r24
-  c6:	65 02       	muls	r22, r21
-  c8:	72 02       	muls	r23, r18
-  ca:	7f 02       	muls	r23, r31
-  cc:	8c 02       	muls	r24, r28
-  ce:	99 02       	muls	r25, r25
-  d0:	f3 02       	muls	r31, r19
-  d2:	f3 02       	muls	r31, r19
-  d4:	f3 02       	muls	r31, r19
-  d6:	f3 02       	muls	r31, r19
-  d8:	f3 02       	muls	r31, r19
-  da:	f3 02       	muls	r31, r19
-  dc:	f3 02       	muls	r31, r19
-  de:	f3 02       	muls	r31, r19
-  e0:	f3 02       	muls	r31, r19
-  e2:	f3 02       	muls	r31, r19
-  e4:	f3 02       	muls	r31, r19
-  e6:	f3 02       	muls	r31, r19
-  e8:	f3 02       	muls	r31, r19
-  ea:	f3 02       	muls	r31, r19
-  ec:	f3 02       	muls	r31, r19
-  ee:	f3 02       	muls	r31, r19
-  f0:	f3 02       	muls	r31, r19
-  f2:	f3 02       	muls	r31, r19
-  f4:	f3 02       	muls	r31, r19
-  f6:	f3 02       	muls	r31, r19
-  f8:	f3 02       	muls	r31, r19
-  fa:	f3 02       	muls	r31, r19
-  fc:	f3 02       	muls	r31, r19
-  fe:	f3 02       	muls	r31, r19
- 100:	f3 02       	muls	r31, r19
- 102:	f3 02       	muls	r31, r19
- 104:	f3 02       	muls	r31, r19
- 106:	f3 02       	muls	r31, r19
- 108:	f3 02       	muls	r31, r19
- 10a:	f3 02       	muls	r31, r19
- 10c:	f3 02       	muls	r31, r19
- 10e:	f3 02       	muls	r31, r19
- 110:	f3 02       	muls	r31, r19
- 112:	f3 02       	muls	r31, r19
- 114:	f3 02       	muls	r31, r19
- 116:	f3 02       	muls	r31, r19
- 118:	f3 02       	muls	r31, r19
- 11a:	f3 02       	muls	r31, r19
- 11c:	f3 02       	muls	r31, r19
- 11e:	a6 02       	muls	r26, r22
- 120:	b3 02       	muls	r27, r19
- 122:	c0 02       	muls	r28, r16
- 124:	cd 02       	muls	r28, r29
- 126:	da 02       	muls	r29, r26
- 128:	e7 02       	muls	r30, r23
+  54:	65 01       	movw	r12, r10
+  56:	74 01       	movw	r14, r8
+  58:	83 01       	movw	r16, r6
+  5a:	92 01       	movw	r18, r4
+  5c:	a1 01       	movw	r20, r2
+  5e:	b0 01       	movw	r22, r0
+  60:	bf 01       	movw	r22, r30
+  62:	ce 01       	movw	r24, r28
+  64:	dd 01       	movw	r26, r26
+  66:	36 02       	muls	r19, r22
+  68:	36 02       	muls	r19, r22
+  6a:	36 02       	muls	r19, r22
+  6c:	36 02       	muls	r19, r22
+  6e:	36 02       	muls	r19, r22
+  70:	36 02       	muls	r19, r22
+  72:	36 02       	muls	r19, r22
+  74:	36 02       	muls	r19, r22
+  76:	36 02       	muls	r19, r22
+  78:	36 02       	muls	r19, r22
+  7a:	36 02       	muls	r19, r22
+  7c:	36 02       	muls	r19, r22
+  7e:	36 02       	muls	r19, r22
+  80:	36 02       	muls	r19, r22
+  82:	36 02       	muls	r19, r22
+  84:	36 02       	muls	r19, r22
+  86:	36 02       	muls	r19, r22
+  88:	36 02       	muls	r19, r22
+  8a:	36 02       	muls	r19, r22
+  8c:	36 02       	muls	r19, r22
+  8e:	36 02       	muls	r19, r22
+  90:	36 02       	muls	r19, r22
+  92:	36 02       	muls	r19, r22
+  94:	36 02       	muls	r19, r22
+  96:	36 02       	muls	r19, r22
+  98:	36 02       	muls	r19, r22
+  9a:	36 02       	muls	r19, r22
+  9c:	36 02       	muls	r19, r22
+  9e:	36 02       	muls	r19, r22
+  a0:	36 02       	muls	r19, r22
+  a2:	36 02       	muls	r19, r22
+  a4:	36 02       	muls	r19, r22
+  a6:	36 02       	muls	r19, r22
+  a8:	36 02       	muls	r19, r22
+  aa:	36 02       	muls	r19, r22
+  ac:	36 02       	muls	r19, r22
+  ae:	36 02       	muls	r19, r22
+  b0:	36 02       	muls	r19, r22
+  b2:	36 02       	muls	r19, r22
+  b4:	ec 01       	movw	r28, r24
+  b6:	fb 01       	movw	r30, r22
+  b8:	0a 02       	muls	r16, r26
+  ba:	19 02       	muls	r17, r25
+  bc:	28 02       	muls	r18, r24
+  be:	42 02       	muls	r20, r18
+  c0:	51 02       	muls	r21, r17
+  c2:	60 02       	muls	r22, r16
+  c4:	6f 02       	muls	r22, r31
+  c6:	7e 02       	muls	r23, r30
+  c8:	8d 02       	muls	r24, r29
+  ca:	9c 02       	muls	r25, r28
+  cc:	ab 02       	muls	r26, r27
+  ce:	ba 02       	muls	r27, r26
+  d0:	22 03       	mulsu	r18, r18
+  d2:	22 03       	mulsu	r18, r18
+  d4:	22 03       	mulsu	r18, r18
+  d6:	22 03       	mulsu	r18, r18
+  d8:	22 03       	mulsu	r18, r18
+  da:	22 03       	mulsu	r18, r18
+  dc:	22 03       	mulsu	r18, r18
+  de:	22 03       	mulsu	r18, r18
+  e0:	22 03       	mulsu	r18, r18
+  e2:	22 03       	mulsu	r18, r18
+  e4:	22 03       	mulsu	r18, r18
+  e6:	22 03       	mulsu	r18, r18
+  e8:	22 03       	mulsu	r18, r18
+  ea:	22 03       	mulsu	r18, r18
+  ec:	22 03       	mulsu	r18, r18
+  ee:	22 03       	mulsu	r18, r18
+  f0:	22 03       	mulsu	r18, r18
+  f2:	22 03       	mulsu	r18, r18
+  f4:	22 03       	mulsu	r18, r18
+  f6:	22 03       	mulsu	r18, r18
+  f8:	22 03       	mulsu	r18, r18
+  fa:	22 03       	mulsu	r18, r18
+  fc:	22 03       	mulsu	r18, r18
+  fe:	22 03       	mulsu	r18, r18
+ 100:	22 03       	mulsu	r18, r18
+ 102:	22 03       	mulsu	r18, r18
+ 104:	22 03       	mulsu	r18, r18
+ 106:	22 03       	mulsu	r18, r18
+ 108:	22 03       	mulsu	r18, r18
+ 10a:	22 03       	mulsu	r18, r18
+ 10c:	22 03       	mulsu	r18, r18
+ 10e:	22 03       	mulsu	r18, r18
+ 110:	22 03       	mulsu	r18, r18
+ 112:	22 03       	mulsu	r18, r18
+ 114:	22 03       	mulsu	r18, r18
+ 116:	22 03       	mulsu	r18, r18
+ 118:	22 03       	mulsu	r18, r18
+ 11a:	22 03       	mulsu	r18, r18
+ 11c:	22 03       	mulsu	r18, r18
+ 11e:	c9 02       	muls	r28, r25
+ 120:	d8 02       	muls	r29, r24
+ 122:	e7 02       	muls	r30, r23
+ 124:	f6 02       	muls	r31, r22
+ 126:	05 03       	mulsu	r16, r21
+ 128:	14 03       	mulsu	r17, r20
 
 0000012a <__ctors_end>:
  12a:	11 24       	eor	r1, r1
@@ -195,18 +195,18 @@ void SendString(char* Streng)
  136:	10 e0       	ldi	r17, 0x00	; 0
  138:	a0 e6       	ldi	r26, 0x60	; 96
  13a:	b0 e0       	ldi	r27, 0x00	; 0
- 13c:	e2 eb       	ldi	r30, 0xB2	; 178
- 13e:	f7 e0       	ldi	r31, 0x07	; 7
+ 13c:	e0 e1       	ldi	r30, 0x10	; 16
+ 13e:	f8 e0       	ldi	r31, 0x08	; 8
  140:	02 c0       	rjmp	.+4      	; 0x146 <__do_copy_data+0x10>
  142:	05 90       	lpm	r0, Z+
  144:	0d 92       	st	X+, r0
- 146:	a6 36       	cpi	r26, 0x66	; 102
+ 146:	a8 36       	cpi	r26, 0x68	; 104
  148:	b1 07       	cpc	r27, r17
  14a:	d9 f7       	brne	.-10     	; 0x142 <__do_copy_data+0xc>
 
 0000014c <__do_clear_bss>:
  14c:	20 e0       	ldi	r18, 0x00	; 0
- 14e:	a6 e6       	ldi	r26, 0x66	; 102
+ 14e:	a8 e6       	ldi	r26, 0x68	; 104
  150:	b0 e0       	ldi	r27, 0x00	; 0
  152:	01 c0       	rjmp	.+2      	; 0x156 <.do_clear_bss_start>
 
@@ -214,11 +214,11 @@ void SendString(char* Streng)
  154:	1d 92       	st	X+, r1
 
 00000156 <.do_clear_bss_start>:
- 156:	ac 36       	cpi	r26, 0x6C	; 108
+ 156:	ae 36       	cpi	r26, 0x6E	; 110
  158:	b2 07       	cpc	r27, r18
  15a:	e1 f7       	brne	.-8      	; 0x154 <.do_clear_bss_loop>
- 15c:	0e 94 10 03 	call	0x620	; 0x620 <main>
- 160:	0c 94 d7 03 	jmp	0x7ae	; 0x7ae <_exit>
+ 15c:	0e 94 3f 03 	call	0x67e	; 0x67e <main>
+ 160:	0c 94 06 04 	jmp	0x80c	; 0x80c <_exit>
 
 00000164 <__bad_interrupt>:
  164:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -248,34 +248,34 @@ ISR(INT2_vect)
  186:	ef 93       	push	r30
  188:	ff 93       	push	r31
 flag++;
- 18a:	80 91 65 00 	lds	r24, 0x0065
+ 18a:	80 91 66 00 	lds	r24, 0x0066
  18e:	8f 5f       	subi	r24, 0xFF	; 255
- 190:	80 93 65 00 	sts	0x0065, r24
+ 190:	80 93 66 00 	sts	0x0066, r24
 if(ready == 1)
- 194:	80 91 66 00 	lds	r24, 0x0066
- 198:	90 91 67 00 	lds	r25, 0x0067
+ 194:	80 91 68 00 	lds	r24, 0x0068
+ 198:	90 91 69 00 	lds	r25, 0x0069
  19c:	01 97       	sbiw	r24, 0x01	; 1
  19e:	09 f0       	breq	.+2      	; 0x1a2 <__vector_3+0x3a>
- 1a0:	5b c0       	rjmp	.+182    	; 0x258 <__vector_3+0xf0>
+ 1a0:	50 c0       	rjmp	.+160    	; 0x242 <__vector_3+0xda>
 {
 	if (flag % 2 == 1) 
- 1a2:	80 91 65 00 	lds	r24, 0x0065
+ 1a2:	80 91 66 00 	lds	r24, 0x0066
  1a6:	80 ff       	sbrs	r24, 0
  1a8:	04 c0       	rjmp	.+8      	; 0x1b2 <__vector_3+0x4a>
 	{
 		failsafe = 0; // sikre at vi ikke sender et 1 og 0 i samme cycel
- 1aa:	10 92 6b 00 	sts	0x006B, r1
- 1ae:	10 92 6a 00 	sts	0x006A, r1
+ 1aa:	10 92 6d 00 	sts	0x006D, r1
+ 1ae:	10 92 6c 00 	sts	0x006C, r1
 	}
 
     if(flag % 2 == 1)  // 1 cycel
- 1b2:	80 91 65 00 	lds	r24, 0x0065
+ 1b2:	80 91 66 00 	lds	r24, 0x0066
  1b6:	80 ff       	sbrs	r24, 0
  1b8:	1a c0       	rjmp	.+52     	; 0x1ee <__vector_3+0x86>
     {
 	    if (DataBuffer[sendcounter] == '1')
- 1ba:	e0 91 68 00 	lds	r30, 0x0068
- 1be:	f0 91 69 00 	lds	r31, 0x0069
+ 1ba:	e0 91 6a 00 	lds	r30, 0x006A
+ 1be:	f0 91 6b 00 	lds	r31, 0x006B
  1c2:	e0 5a       	subi	r30, 0xA0	; 160
  1c4:	ff 4f       	sbci	r31, 0xFF	; 255
  1c6:	80 81       	ld	r24, Z
@@ -283,31 +283,31 @@ if(ready == 1)
  1ca:	89 f4       	brne	.+34     	; 0x1ee <__vector_3+0x86>
 	    {
 		    Burst();
- 1cc:	0e 94 89 03 	call	0x712	; 0x712 <Burst>
+ 1cc:	0e 94 b8 03 	call	0x770	; 0x770 <Burst>
 		    sendcounter++;
- 1d0:	80 91 68 00 	lds	r24, 0x0068
- 1d4:	90 91 69 00 	lds	r25, 0x0069
+ 1d0:	80 91 6a 00 	lds	r24, 0x006A
+ 1d4:	90 91 6b 00 	lds	r25, 0x006B
  1d8:	01 96       	adiw	r24, 0x01	; 1
- 1da:	90 93 69 00 	sts	0x0069, r25
- 1de:	80 93 68 00 	sts	0x0068, r24
+ 1da:	90 93 6b 00 	sts	0x006B, r25
+ 1de:	80 93 6a 00 	sts	0x006A, r24
 		    failsafe = 1;
  1e2:	81 e0       	ldi	r24, 0x01	; 1
  1e4:	90 e0       	ldi	r25, 0x00	; 0
- 1e6:	90 93 6b 00 	sts	0x006B, r25
- 1ea:	80 93 6a 00 	sts	0x006A, r24
+ 1e6:	90 93 6d 00 	sts	0x006D, r25
+ 1ea:	80 93 6c 00 	sts	0x006C, r24
 		    //nothing
 	    }
 	    
     }
 
 	if(flag % 2 == 0) // 0 cycel
- 1ee:	80 91 65 00 	lds	r24, 0x0065
+ 1ee:	80 91 66 00 	lds	r24, 0x0066
  1f2:	80 fd       	sbrc	r24, 0
  1f4:	1a c0       	rjmp	.+52     	; 0x22a <__vector_3+0xc2>
     {
 		if (DataBuffer[sendcounter] == '0')
- 1f6:	e0 91 68 00 	lds	r30, 0x0068
- 1fa:	f0 91 69 00 	lds	r31, 0x0069
+ 1f6:	e0 91 6a 00 	lds	r30, 0x006A
+ 1fa:	f0 91 6b 00 	lds	r31, 0x006B
  1fe:	e0 5a       	subi	r30, 0xA0	; 160
  200:	ff 4f       	sbci	r31, 0xFF	; 255
  202:	80 81       	ld	r24, Z
@@ -315,979 +315,1026 @@ if(ready == 1)
  206:	89 f4       	brne	.+34     	; 0x22a <__vector_3+0xc2>
         {
 				if (failsafe == 0)
- 208:	80 91 6a 00 	lds	r24, 0x006A
- 20c:	90 91 6b 00 	lds	r25, 0x006B
+ 208:	80 91 6c 00 	lds	r24, 0x006C
+ 20c:	90 91 6d 00 	lds	r25, 0x006D
  210:	89 2b       	or	r24, r25
  212:	59 f4       	brne	.+22     	; 0x22a <__vector_3+0xc2>
 				{
 					Burst();
- 214:	0e 94 89 03 	call	0x712	; 0x712 <Burst>
+ 214:	0e 94 b8 03 	call	0x770	; 0x770 <Burst>
 					sendcounter++;
- 218:	80 91 68 00 	lds	r24, 0x0068
- 21c:	90 91 69 00 	lds	r25, 0x0069
+ 218:	80 91 6a 00 	lds	r24, 0x006A
+ 21c:	90 91 6b 00 	lds	r25, 0x006B
  220:	01 96       	adiw	r24, 0x01	; 1
- 222:	90 93 69 00 	sts	0x0069, r25
- 226:	80 93 68 00 	sts	0x0068, r24
+ 222:	90 93 6b 00 	sts	0x006B, r25
+ 226:	80 93 6a 00 	sts	0x006A, r24
 		{
 			//nothing
 		}
     }
        
     if (sendcounter == 5)
- 22a:	80 91 68 00 	lds	r24, 0x0068
- 22e:	90 91 69 00 	lds	r25, 0x0069
+ 22a:	80 91 6a 00 	lds	r24, 0x006A
+ 22e:	90 91 6b 00 	lds	r25, 0x006B
  232:	05 97       	sbiw	r24, 0x05	; 5
- 234:	89 f4       	brne	.+34     	; 0x258 <__vector_3+0xf0>
+ 234:	31 f4       	brne	.+12     	; 0x242 <__vector_3+0xda>
     {
 		ready = 0;
- 236:	10 92 67 00 	sts	0x0067, r1
- 23a:	10 92 66 00 	sts	0x0066, r1
-		DataBuffer[0] = '0';
- 23e:	80 e3       	ldi	r24, 0x30	; 48
- 240:	80 93 60 00 	sts	0x0060, r24
-		DataBuffer[1] = '0';
- 244:	80 93 61 00 	sts	0x0061, r24
-		DataBuffer[2] = '0';
- 248:	80 93 62 00 	sts	0x0062, r24
-		DataBuffer[3] = '0';
- 24c:	80 93 63 00 	sts	0x0063, r24
-		DataBuffer[4] = '0';
- 250:	80 93 64 00 	sts	0x0064, r24
-		DataBuffer[5] = '\0';
- 254:	10 92 65 00 	sts	0x0065, r1
+ 236:	10 92 69 00 	sts	0x0069, r1
+ 23a:	10 92 68 00 	sts	0x0068, r1
+		DataBuffer[0] = '\0';
+ 23e:	10 92 60 00 	sts	0x0060, r1
 	}		
 }
 } 
- 258:	ff 91       	pop	r31
- 25a:	ef 91       	pop	r30
- 25c:	bf 91       	pop	r27
- 25e:	af 91       	pop	r26
- 260:	9f 91       	pop	r25
- 262:	8f 91       	pop	r24
- 264:	7f 91       	pop	r23
- 266:	6f 91       	pop	r22
- 268:	5f 91       	pop	r21
- 26a:	4f 91       	pop	r20
- 26c:	3f 91       	pop	r19
- 26e:	2f 91       	pop	r18
- 270:	0f 90       	pop	r0
- 272:	0f be       	out	0x3f, r0	; 63
- 274:	0f 90       	pop	r0
- 276:	1f 90       	pop	r1
- 278:	18 95       	reti
+ 242:	ff 91       	pop	r31
+ 244:	ef 91       	pop	r30
+ 246:	bf 91       	pop	r27
+ 248:	af 91       	pop	r26
+ 24a:	9f 91       	pop	r25
+ 24c:	8f 91       	pop	r24
+ 24e:	7f 91       	pop	r23
+ 250:	6f 91       	pop	r22
+ 252:	5f 91       	pop	r21
+ 254:	4f 91       	pop	r20
+ 256:	3f 91       	pop	r19
+ 258:	2f 91       	pop	r18
+ 25a:	0f 90       	pop	r0
+ 25c:	0f be       	out	0x3f, r0	; 63
+ 25e:	0f 90       	pop	r0
+ 260:	1f 90       	pop	r1
+ 262:	18 95       	reti
 
-0000027a <__vector_13>:
+00000264 <__vector_13>:
  hvis den første char er ! eller ? 
  checkes der for om der skal tændes eller slukkes for lys
  derefter senden den et binær array til databuffern som skal sendes via zero crossing interrupts
  */
 ISR (USART_RXC_vect)
 { 
- 27a:	1f 92       	push	r1
- 27c:	0f 92       	push	r0
- 27e:	0f b6       	in	r0, 0x3f	; 63
- 280:	0f 92       	push	r0
- 282:	11 24       	eor	r1, r1
- 284:	2f 93       	push	r18
- 286:	3f 93       	push	r19
- 288:	4f 93       	push	r20
- 28a:	5f 93       	push	r21
- 28c:	6f 93       	push	r22
- 28e:	7f 93       	push	r23
- 290:	8f 93       	push	r24
- 292:	9f 93       	push	r25
- 294:	af 93       	push	r26
- 296:	bf 93       	push	r27
- 298:	ef 93       	push	r30
- 29a:	ff 93       	push	r31
- 29c:	cf 93       	push	r28
- 29e:	df 93       	push	r29
- 2a0:	00 d0       	rcall	.+0      	; 0x2a2 <__vector_13+0x28>
- 2a2:	00 d0       	rcall	.+0      	; 0x2a4 <__vector_13+0x2a>
- 2a4:	cd b7       	in	r28, 0x3d	; 61
- 2a6:	de b7       	in	r29, 0x3e	; 62
+ 264:	1f 92       	push	r1
+ 266:	0f 92       	push	r0
+ 268:	0f b6       	in	r0, 0x3f	; 63
+ 26a:	0f 92       	push	r0
+ 26c:	11 24       	eor	r1, r1
+ 26e:	2f 93       	push	r18
+ 270:	3f 93       	push	r19
+ 272:	4f 93       	push	r20
+ 274:	5f 93       	push	r21
+ 276:	6f 93       	push	r22
+ 278:	7f 93       	push	r23
+ 27a:	8f 93       	push	r24
+ 27c:	9f 93       	push	r25
+ 27e:	af 93       	push	r26
+ 280:	bf 93       	push	r27
+ 282:	ef 93       	push	r30
+ 284:	ff 93       	push	r31
+ 286:	cf 93       	push	r28
+ 288:	df 93       	push	r29
+ 28a:	00 d0       	rcall	.+0      	; 0x28c <__vector_13+0x28>
+ 28c:	00 d0       	rcall	.+0      	; 0x28e <__vector_13+0x2a>
+ 28e:	cd b7       	in	r28, 0x3d	; 61
+ 290:	de b7       	in	r29, 0x3e	; 62
 	char Buffer[4];
 	ReadString(&Buffer,ARRAY);
- 2a8:	64 e0       	ldi	r22, 0x04	; 4
- 2aa:	70 e0       	ldi	r23, 0x00	; 0
- 2ac:	ce 01       	movw	r24, r28
- 2ae:	01 96       	adiw	r24, 0x01	; 1
- 2b0:	0e 94 61 03 	call	0x6c2	; 0x6c2 <ReadString>
+ 292:	64 e0       	ldi	r22, 0x04	; 4
+ 294:	70 e0       	ldi	r23, 0x00	; 0
+ 296:	ce 01       	movw	r24, r28
+ 298:	01 96       	adiw	r24, 0x01	; 1
+ 29a:	0e 94 90 03 	call	0x720	; 0x720 <ReadString>
 	if (Buffer[0] == '!' || Buffer[0] == '?')
- 2b4:	89 81       	ldd	r24, Y+1	; 0x01
- 2b6:	81 32       	cpi	r24, 0x21	; 33
- 2b8:	19 f0       	breq	.+6      	; 0x2c0 <__vector_13+0x46>
- 2ba:	8f 33       	cpi	r24, 0x3F	; 63
- 2bc:	09 f0       	breq	.+2      	; 0x2c0 <__vector_13+0x46>
- 2be:	99 c1       	rjmp	.+818    	; 0x5f2 <__vector_13+0x378>
+ 29e:	89 81       	ldd	r24, Y+1	; 0x01
+ 2a0:	81 32       	cpi	r24, 0x21	; 33
+ 2a2:	19 f0       	breq	.+6      	; 0x2aa <__vector_13+0x46>
+ 2a4:	8f 33       	cpi	r24, 0x3F	; 63
+ 2a6:	09 f0       	breq	.+2      	; 0x2aa <__vector_13+0x46>
+ 2a8:	d3 c1       	rjmp	.+934    	; 0x650 <__vector_13+0x3ec>
 	{
 		if (Buffer[2] == '0')
- 2c0:	8b 81       	ldd	r24, Y+3	; 0x03
- 2c2:	80 33       	cpi	r24, 0x30	; 48
- 2c4:	09 f0       	breq	.+2      	; 0x2c8 <__vector_13+0x4e>
- 2c6:	8f c1       	rjmp	.+798    	; 0x5e6 <__vector_13+0x36c>
+ 2aa:	8b 81       	ldd	r24, Y+3	; 0x03
+ 2ac:	80 33       	cpi	r24, 0x30	; 48
+ 2ae:	09 f0       	breq	.+2      	; 0x2b2 <__vector_13+0x4e>
+ 2b0:	c9 c1       	rjmp	.+914    	; 0x644 <__vector_13+0x3e0>
 		{
 			switch (Buffer[1])
- 2c8:	8a 81       	ldd	r24, Y+2	; 0x02
- 2ca:	90 e0       	ldi	r25, 0x00	; 0
- 2cc:	fc 01       	movw	r30, r24
- 2ce:	f1 97       	sbiw	r30, 0x31	; 49
- 2d0:	e5 33       	cpi	r30, 0x35	; 53
- 2d2:	f1 05       	cpc	r31, r1
- 2d4:	08 f0       	brcs	.+2      	; 0x2d8 <__vector_13+0x5e>
- 2d6:	b9 c0       	rjmp	.+370    	; 0x44a <__vector_13+0x1d0>
- 2d8:	e6 5d       	subi	r30, 0xD6	; 214
- 2da:	ff 4f       	sbci	r31, 0xFF	; 255
- 2dc:	0c 94 d1 03 	jmp	0x7a2	; 0x7a2 <__tablejump2__>
+ 2b2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 2b4:	90 e0       	ldi	r25, 0x00	; 0
+ 2b6:	fc 01       	movw	r30, r24
+ 2b8:	f1 97       	sbiw	r30, 0x31	; 49
+ 2ba:	e5 33       	cpi	r30, 0x35	; 53
+ 2bc:	f1 05       	cpc	r31, r1
+ 2be:	08 f0       	brcs	.+2      	; 0x2c2 <__vector_13+0x5e>
+ 2c0:	d5 c0       	rjmp	.+426    	; 0x46c <__vector_13+0x208>
+ 2c2:	e6 5d       	subi	r30, 0xD6	; 214
+ 2c4:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2c6:	0c 94 00 04 	jmp	0x800	; 0x800 <__tablejump2__>
 			{ 
 				case '1' ://DataBuffer[5] = {0,0,0,1,1}; 
 					DataBuffer[0] = '0';
- 2e0:	80 e3       	ldi	r24, 0x30	; 48
- 2e2:	80 93 60 00 	sts	0x0060, r24
+ 2ca:	80 e3       	ldi	r24, 0x30	; 48
+ 2cc:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 2e6:	80 93 61 00 	sts	0x0061, r24
+ 2d0:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 2ea:	80 93 62 00 	sts	0x0062, r24
+ 2d4:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 2ee:	81 e3       	ldi	r24, 0x31	; 49
- 2f0:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '1'; 
- 2f4:	80 93 64 00 	sts	0x0064, r24
+ 2d8:	81 e3       	ldi	r24, 0x31	; 49
+ 2da:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[4] = '1';
+ 2de:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0'; 
+ 2e2:	10 92 65 00 	sts	0x0065, r1
 					break;
- 2f8:	a8 c0       	rjmp	.+336    	; 0x44a <__vector_13+0x1d0>
+ 2e6:	c2 c0       	rjmp	.+388    	; 0x46c <__vector_13+0x208>
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,1}; 
 					DataBuffer[0] = '0';
- 2fa:	80 e3       	ldi	r24, 0x30	; 48
- 2fc:	80 93 60 00 	sts	0x0060, r24
+ 2e8:	80 e3       	ldi	r24, 0x30	; 48
+ 2ea:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 300:	80 93 61 00 	sts	0x0061, r24
+ 2ee:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 304:	91 e3       	ldi	r25, 0x31	; 49
- 306:	90 93 62 00 	sts	0x0062, r25
+ 2f2:	91 e3       	ldi	r25, 0x31	; 49
+ 2f4:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '0';
- 30a:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '1';				 
- 30e:	90 93 64 00 	sts	0x0064, r25
+ 2f8:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[4] = '1';
+ 2fc:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';				 
+ 300:	10 92 65 00 	sts	0x0065, r1
 					break;
- 312:	9b c0       	rjmp	.+310    	; 0x44a <__vector_13+0x1d0>
+ 304:	b3 c0       	rjmp	.+358    	; 0x46c <__vector_13+0x208>
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,1};  
 					DataBuffer[0] = '0';
- 314:	80 e3       	ldi	r24, 0x30	; 48
- 316:	80 93 60 00 	sts	0x0060, r24
+ 306:	80 e3       	ldi	r24, 0x30	; 48
+ 308:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 31a:	80 93 61 00 	sts	0x0061, r24
+ 30c:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 31e:	81 e3       	ldi	r24, 0x31	; 49
- 320:	80 93 62 00 	sts	0x0062, r24
+ 310:	81 e3       	ldi	r24, 0x31	; 49
+ 312:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 324:	80 93 63 00 	sts	0x0063, r24
+ 316:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 328:	80 93 64 00 	sts	0x0064, r24
+ 31a:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 31e:	10 92 65 00 	sts	0x0065, r1
 					break;
- 32c:	8e c0       	rjmp	.+284    	; 0x44a <__vector_13+0x1d0>
+ 322:	a4 c0       	rjmp	.+328    	; 0x46c <__vector_13+0x208>
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,1}; 
 					DataBuffer[0] = '0';
- 32e:	80 e3       	ldi	r24, 0x30	; 48
- 330:	80 93 60 00 	sts	0x0060, r24
+ 324:	80 e3       	ldi	r24, 0x30	; 48
+ 326:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 334:	91 e3       	ldi	r25, 0x31	; 49
- 336:	90 93 61 00 	sts	0x0061, r25
+ 32a:	91 e3       	ldi	r25, 0x31	; 49
+ 32c:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '0';
- 33a:	80 93 62 00 	sts	0x0062, r24
+ 330:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 33e:	80 93 63 00 	sts	0x0063, r24
+ 334:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 342:	90 93 64 00 	sts	0x0064, r25
+ 338:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';
+ 33c:	10 92 65 00 	sts	0x0065, r1
 					break;
- 346:	81 c0       	rjmp	.+258    	; 0x44a <__vector_13+0x1d0>
+ 340:	95 c0       	rjmp	.+298    	; 0x46c <__vector_13+0x208>
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,1}; 
 					DataBuffer[0] = '0';
- 348:	90 e3       	ldi	r25, 0x30	; 48
- 34a:	90 93 60 00 	sts	0x0060, r25
+ 342:	90 e3       	ldi	r25, 0x30	; 48
+ 344:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '1';
- 34e:	81 e3       	ldi	r24, 0x31	; 49
- 350:	80 93 61 00 	sts	0x0061, r24
+ 348:	81 e3       	ldi	r24, 0x31	; 49
+ 34a:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 354:	90 93 62 00 	sts	0x0062, r25
+ 34e:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '1';
- 358:	80 93 63 00 	sts	0x0063, r24
+ 352:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 35c:	80 93 64 00 	sts	0x0064, r24
+ 356:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 35a:	10 92 65 00 	sts	0x0065, r1
 					break;
- 360:	74 c0       	rjmp	.+232    	; 0x44a <__vector_13+0x1d0>
+ 35e:	86 c0       	rjmp	.+268    	; 0x46c <__vector_13+0x208>
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,1};  
 					DataBuffer[0] = '0';
- 362:	90 e3       	ldi	r25, 0x30	; 48
- 364:	90 93 60 00 	sts	0x0060, r25
+ 360:	90 e3       	ldi	r25, 0x30	; 48
+ 362:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '1';
- 368:	81 e3       	ldi	r24, 0x31	; 49
- 36a:	80 93 61 00 	sts	0x0061, r24
+ 366:	81 e3       	ldi	r24, 0x31	; 49
+ 368:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 36e:	80 93 62 00 	sts	0x0062, r24
+ 36c:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 372:	90 93 63 00 	sts	0x0063, r25
+ 370:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '1';
- 376:	80 93 64 00 	sts	0x0064, r24
+ 374:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 378:	10 92 65 00 	sts	0x0065, r1
 					break;
- 37a:	67 c0       	rjmp	.+206    	; 0x44a <__vector_13+0x1d0>
+ 37c:	77 c0       	rjmp	.+238    	; 0x46c <__vector_13+0x208>
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,1}; 
 					DataBuffer[0] = '0';
- 37c:	80 e3       	ldi	r24, 0x30	; 48
- 37e:	80 93 60 00 	sts	0x0060, r24
+ 37e:	80 e3       	ldi	r24, 0x30	; 48
+ 380:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 382:	81 e3       	ldi	r24, 0x31	; 49
- 384:	80 93 61 00 	sts	0x0061, r24
+ 384:	81 e3       	ldi	r24, 0x31	; 49
+ 386:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 388:	80 93 62 00 	sts	0x0062, r24
+ 38a:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 38c:	80 93 63 00 	sts	0x0063, r24
+ 38e:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 390:	80 93 64 00 	sts	0x0064, r24
+ 392:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 396:	10 92 65 00 	sts	0x0065, r1
 					break;
- 394:	5a c0       	rjmp	.+180    	; 0x44a <__vector_13+0x1d0>
+ 39a:	68 c0       	rjmp	.+208    	; 0x46c <__vector_13+0x208>
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,1};  
 					DataBuffer[0] = '1';
- 396:	91 e3       	ldi	r25, 0x31	; 49
- 398:	90 93 60 00 	sts	0x0060, r25
+ 39c:	91 e3       	ldi	r25, 0x31	; 49
+ 39e:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '0';
- 39c:	80 e3       	ldi	r24, 0x30	; 48
- 39e:	80 93 61 00 	sts	0x0061, r24
+ 3a2:	80 e3       	ldi	r24, 0x30	; 48
+ 3a4:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 3a2:	80 93 62 00 	sts	0x0062, r24
+ 3a8:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 3a6:	80 93 63 00 	sts	0x0063, r24
+ 3ac:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 3aa:	90 93 64 00 	sts	0x0064, r25
+ 3b0:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';
+ 3b4:	10 92 65 00 	sts	0x0065, r1
 					break;
- 3ae:	4d c0       	rjmp	.+154    	; 0x44a <__vector_13+0x1d0>
+ 3b8:	59 c0       	rjmp	.+178    	; 0x46c <__vector_13+0x208>
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,1};  
 					DataBuffer[0] = '1';
- 3b0:	81 e3       	ldi	r24, 0x31	; 49
- 3b2:	80 93 60 00 	sts	0x0060, r24
+ 3ba:	81 e3       	ldi	r24, 0x31	; 49
+ 3bc:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 3b6:	90 e3       	ldi	r25, 0x30	; 48
- 3b8:	90 93 61 00 	sts	0x0061, r25
+ 3c0:	90 e3       	ldi	r25, 0x30	; 48
+ 3c2:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '0';
- 3bc:	90 93 62 00 	sts	0x0062, r25
+ 3c6:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '1';
- 3c0:	80 93 63 00 	sts	0x0063, r24
+ 3ca:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 3c4:	80 93 64 00 	sts	0x0064, r24
+ 3ce:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 3d2:	10 92 65 00 	sts	0x0065, r1
 					break;
- 3c8:	40 c0       	rjmp	.+128    	; 0x44a <__vector_13+0x1d0>
+ 3d6:	4a c0       	rjmp	.+148    	; 0x46c <__vector_13+0x208>
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,1}; 
 					DataBuffer[0] = '1';
- 3ca:	81 e3       	ldi	r24, 0x31	; 49
- 3cc:	80 93 60 00 	sts	0x0060, r24
+ 3d8:	81 e3       	ldi	r24, 0x31	; 49
+ 3da:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 3d0:	90 e3       	ldi	r25, 0x30	; 48
- 3d2:	90 93 61 00 	sts	0x0061, r25
+ 3de:	90 e3       	ldi	r25, 0x30	; 48
+ 3e0:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '1';
- 3d6:	80 93 62 00 	sts	0x0062, r24
+ 3e4:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 3da:	90 93 63 00 	sts	0x0063, r25
+ 3e8:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '1';
- 3de:	80 93 64 00 	sts	0x0064, r24
+ 3ec:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 3f0:	10 92 65 00 	sts	0x0065, r1
 					break;
- 3e2:	33 c0       	rjmp	.+102    	; 0x44a <__vector_13+0x1d0>
+ 3f4:	3b c0       	rjmp	.+118    	; 0x46c <__vector_13+0x208>
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,1};  
 					DataBuffer[0] = '1';
- 3e4:	81 e3       	ldi	r24, 0x31	; 49
- 3e6:	80 93 60 00 	sts	0x0060, r24
+ 3f6:	81 e3       	ldi	r24, 0x31	; 49
+ 3f8:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 3ea:	90 e3       	ldi	r25, 0x30	; 48
- 3ec:	90 93 61 00 	sts	0x0061, r25
+ 3fc:	90 e3       	ldi	r25, 0x30	; 48
+ 3fe:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '1';
- 3f0:	80 93 62 00 	sts	0x0062, r24
+ 402:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 3f4:	80 93 63 00 	sts	0x0063, r24
+ 406:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
- 3f8:	80 93 64 00 	sts	0x0064, r24
+ 40a:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 40e:	10 92 65 00 	sts	0x0065, r1
 					break;
- 3fc:	26 c0       	rjmp	.+76     	; 0x44a <__vector_13+0x1d0>
+ 412:	2c c0       	rjmp	.+88     	; 0x46c <__vector_13+0x208>
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,1}; 
 					DataBuffer[0] = '1';
- 3fe:	81 e3       	ldi	r24, 0x31	; 49
- 400:	80 93 60 00 	sts	0x0060, r24
+ 414:	81 e3       	ldi	r24, 0x31	; 49
+ 416:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 404:	80 93 61 00 	sts	0x0061, r24
+ 41a:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 408:	90 e3       	ldi	r25, 0x30	; 48
- 40a:	90 93 62 00 	sts	0x0062, r25
+ 41e:	90 e3       	ldi	r25, 0x30	; 48
+ 420:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '0';
- 40e:	90 93 63 00 	sts	0x0063, r25
+ 424:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '1';
- 412:	80 93 64 00 	sts	0x0064, r24
+ 428:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 42c:	10 92 65 00 	sts	0x0065, r1
 					break;
- 416:	19 c0       	rjmp	.+50     	; 0x44a <__vector_13+0x1d0>
+ 430:	1d c0       	rjmp	.+58     	; 0x46c <__vector_13+0x208>
 
 				case 'd' ://DataBuffer[5] = {1,1,0,1,1};
 			 
-					DataBuffer[0] = '1';
- 418:	81 e3       	ldi	r24, 0x31	; 49
- 41a:	80 93 60 00 	sts	0x0060, r24
-					DataBuffer[1] = '1';
- 41e:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '0';
- 422:	90 e3       	ldi	r25, 0x30	; 48
- 424:	90 93 62 00 	sts	0x0062, r25
-					DataBuffer[3] = '1';
- 428:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '1';
- 42c:	80 93 64 00 	sts	0x0064, r24
-					break;
- 430:	0c c0       	rjmp	.+24     	; 0x44a <__vector_13+0x1d0>
-
-				case 'e' :// DataBuffer[5] = {1,1,1,0,1};  
 					DataBuffer[0] = '1';
  432:	81 e3       	ldi	r24, 0x31	; 49
  434:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
  438:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '1';
- 43c:	80 93 62 00 	sts	0x0062, r24
-					DataBuffer[3] = '0';
- 440:	90 e3       	ldi	r25, 0x30	; 48
- 442:	90 93 63 00 	sts	0x0063, r25
+					DataBuffer[2] = '0';
+ 43c:	90 e3       	ldi	r25, 0x30	; 48
+ 43e:	90 93 62 00 	sts	0x0062, r25
+					DataBuffer[3] = '1';
+ 442:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '1';
  446:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 44a:	10 92 65 00 	sts	0x0065, r1
+					break;
+ 44e:	0e c0       	rjmp	.+28     	; 0x46c <__vector_13+0x208>
+
+				case 'e' :// DataBuffer[5] = {1,1,1,0,1};  
+					DataBuffer[0] = '1';
+ 450:	81 e3       	ldi	r24, 0x31	; 49
+ 452:	80 93 60 00 	sts	0x0060, r24
+					DataBuffer[1] = '1';
+ 456:	80 93 61 00 	sts	0x0061, r24
+					DataBuffer[2] = '1';
+ 45a:	80 93 62 00 	sts	0x0062, r24
+					DataBuffer[3] = '0';
+ 45e:	90 e3       	ldi	r25, 0x30	; 48
+ 460:	90 93 63 00 	sts	0x0063, r25
+					DataBuffer[4] = '1';
+ 464:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 468:	10 92 65 00 	sts	0x0065, r1
 			}
 		}
 
 		if (Buffer[2] == '0')
 		{
 			switch (Buffer[1])
- 44a:	8a 81       	ldd	r24, Y+2	; 0x02
- 44c:	90 e0       	ldi	r25, 0x00	; 0
- 44e:	fc 01       	movw	r30, r24
- 450:	f1 97       	sbiw	r30, 0x31	; 49
- 452:	e6 33       	cpi	r30, 0x36	; 54
- 454:	f1 05       	cpc	r31, r1
- 456:	08 f0       	brcs	.+2      	; 0x45a <__vector_13+0x1e0>
- 458:	c6 c0       	rjmp	.+396    	; 0x5e6 <__vector_13+0x36c>
- 45a:	e1 5a       	subi	r30, 0xA1	; 161
- 45c:	ff 4f       	sbci	r31, 0xFF	; 255
- 45e:	0c 94 d1 03 	jmp	0x7a2	; 0x7a2 <__tablejump2__>
+ 46c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 46e:	90 e0       	ldi	r25, 0x00	; 0
+ 470:	fc 01       	movw	r30, r24
+ 472:	f1 97       	sbiw	r30, 0x31	; 49
+ 474:	e6 33       	cpi	r30, 0x36	; 54
+ 476:	f1 05       	cpc	r31, r1
+ 478:	08 f0       	brcs	.+2      	; 0x47c <__vector_13+0x218>
+ 47a:	e4 c0       	rjmp	.+456    	; 0x644 <__vector_13+0x3e0>
+ 47c:	e1 5a       	subi	r30, 0xA1	; 161
+ 47e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 480:	0c 94 00 04 	jmp	0x800	; 0x800 <__tablejump2__>
 			{
 				case '1' ://DataBuffer[5] = {0,0,0,1,0};
 					DataBuffer[0] = '0';
- 462:	80 e3       	ldi	r24, 0x30	; 48
- 464:	80 93 60 00 	sts	0x0060, r24
+ 484:	80 e3       	ldi	r24, 0x30	; 48
+ 486:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 468:	80 93 61 00 	sts	0x0061, r24
+ 48a:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 46c:	80 93 62 00 	sts	0x0062, r24
+ 48e:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 470:	91 e3       	ldi	r25, 0x31	; 49
- 472:	90 93 63 00 	sts	0x0063, r25
+ 492:	91 e3       	ldi	r25, 0x31	; 49
+ 494:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '0';
- 476:	80 93 64 00 	sts	0x0064, r24
+ 498:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 49c:	10 92 65 00 	sts	0x0065, r1
 					break;
- 47a:	b5 c0       	rjmp	.+362    	; 0x5e6 <__vector_13+0x36c>
+ 4a0:	d1 c0       	rjmp	.+418    	; 0x644 <__vector_13+0x3e0>
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,0};
 					DataBuffer[0] = '0';
- 47c:	80 e3       	ldi	r24, 0x30	; 48
- 47e:	80 93 60 00 	sts	0x0060, r24
+ 4a2:	80 e3       	ldi	r24, 0x30	; 48
+ 4a4:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 482:	80 93 61 00 	sts	0x0061, r24
+ 4a8:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 486:	91 e3       	ldi	r25, 0x31	; 49
- 488:	90 93 62 00 	sts	0x0062, r25
+ 4ac:	91 e3       	ldi	r25, 0x31	; 49
+ 4ae:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '0';
- 48c:	80 93 63 00 	sts	0x0063, r24
+ 4b2:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 490:	80 93 64 00 	sts	0x0064, r24
+ 4b6:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 4ba:	10 92 65 00 	sts	0x0065, r1
 					break;
- 494:	a8 c0       	rjmp	.+336    	; 0x5e6 <__vector_13+0x36c>
+ 4be:	c2 c0       	rjmp	.+388    	; 0x644 <__vector_13+0x3e0>
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,0};
 					DataBuffer[0] = '0';
- 496:	80 e3       	ldi	r24, 0x30	; 48
- 498:	80 93 60 00 	sts	0x0060, r24
+ 4c0:	80 e3       	ldi	r24, 0x30	; 48
+ 4c2:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 49c:	80 93 61 00 	sts	0x0061, r24
+ 4c6:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 4a0:	91 e3       	ldi	r25, 0x31	; 49
- 4a2:	90 93 62 00 	sts	0x0062, r25
+ 4ca:	91 e3       	ldi	r25, 0x31	; 49
+ 4cc:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '1';
- 4a6:	90 93 63 00 	sts	0x0063, r25
+ 4d0:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '0';
- 4aa:	80 93 64 00 	sts	0x0064, r24
+ 4d4:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 4d8:	10 92 65 00 	sts	0x0065, r1
 					break;
- 4ae:	9b c0       	rjmp	.+310    	; 0x5e6 <__vector_13+0x36c>
+ 4dc:	b3 c0       	rjmp	.+358    	; 0x644 <__vector_13+0x3e0>
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,0};
 					DataBuffer[0] = '0';
- 4b0:	80 e3       	ldi	r24, 0x30	; 48
- 4b2:	80 93 60 00 	sts	0x0060, r24
+ 4de:	80 e3       	ldi	r24, 0x30	; 48
+ 4e0:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 4b6:	91 e3       	ldi	r25, 0x31	; 49
- 4b8:	90 93 61 00 	sts	0x0061, r25
+ 4e4:	91 e3       	ldi	r25, 0x31	; 49
+ 4e6:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '0';
- 4bc:	80 93 62 00 	sts	0x0062, r24
+ 4ea:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 4c0:	80 93 63 00 	sts	0x0063, r24
+ 4ee:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 4c4:	80 93 64 00 	sts	0x0064, r24
+ 4f2:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 4f6:	10 92 65 00 	sts	0x0065, r1
 					break;
- 4c8:	8e c0       	rjmp	.+284    	; 0x5e6 <__vector_13+0x36c>
+ 4fa:	a4 c0       	rjmp	.+328    	; 0x644 <__vector_13+0x3e0>
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,0};
 					DataBuffer[0] = '0';
- 4ca:	80 e3       	ldi	r24, 0x30	; 48
- 4cc:	80 93 60 00 	sts	0x0060, r24
+ 4fc:	80 e3       	ldi	r24, 0x30	; 48
+ 4fe:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 4d0:	91 e3       	ldi	r25, 0x31	; 49
- 4d2:	90 93 61 00 	sts	0x0061, r25
+ 502:	91 e3       	ldi	r25, 0x31	; 49
+ 504:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '0';
- 4d6:	80 93 62 00 	sts	0x0062, r24
+ 508:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 4da:	90 93 63 00 	sts	0x0063, r25
+ 50c:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '0';
- 4de:	80 93 64 00 	sts	0x0064, r24
+ 510:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 514:	10 92 65 00 	sts	0x0065, r1
 					break;
- 4e2:	81 c0       	rjmp	.+258    	; 0x5e6 <__vector_13+0x36c>
+ 518:	95 c0       	rjmp	.+298    	; 0x644 <__vector_13+0x3e0>
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,0};
 					DataBuffer[0] = '0';
- 4e4:	80 e3       	ldi	r24, 0x30	; 48
- 4e6:	80 93 60 00 	sts	0x0060, r24
+ 51a:	80 e3       	ldi	r24, 0x30	; 48
+ 51c:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
- 4ea:	91 e3       	ldi	r25, 0x31	; 49
- 4ec:	90 93 61 00 	sts	0x0061, r25
+ 520:	91 e3       	ldi	r25, 0x31	; 49
+ 522:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '1';
- 4f0:	90 93 62 00 	sts	0x0062, r25
+ 526:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '0';
- 4f4:	80 93 63 00 	sts	0x0063, r24
+ 52a:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 4f8:	80 93 64 00 	sts	0x0064, r24
+ 52e:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 532:	10 92 65 00 	sts	0x0065, r1
 					break;
- 4fc:	74 c0       	rjmp	.+232    	; 0x5e6 <__vector_13+0x36c>
+ 536:	86 c0       	rjmp	.+268    	; 0x644 <__vector_13+0x3e0>
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,0};
 					DataBuffer[0] = '0';
- 4fe:	90 e3       	ldi	r25, 0x30	; 48
- 500:	90 93 60 00 	sts	0x0060, r25
+ 538:	90 e3       	ldi	r25, 0x30	; 48
+ 53a:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '1';
- 504:	81 e3       	ldi	r24, 0x31	; 49
- 506:	80 93 61 00 	sts	0x0061, r24
+ 53e:	81 e3       	ldi	r24, 0x31	; 49
+ 540:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 50a:	80 93 62 00 	sts	0x0062, r24
+ 544:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 50e:	80 93 63 00 	sts	0x0063, r24
+ 548:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 512:	90 93 64 00 	sts	0x0064, r25
+ 54c:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';
+ 550:	10 92 65 00 	sts	0x0065, r1
 					break;
- 516:	67 c0       	rjmp	.+206    	; 0x5e6 <__vector_13+0x36c>
+ 554:	77 c0       	rjmp	.+238    	; 0x644 <__vector_13+0x3e0>
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,0};
 					DataBuffer[0] = '1';
- 518:	81 e3       	ldi	r24, 0x31	; 49
- 51a:	80 93 60 00 	sts	0x0060, r24
+ 556:	81 e3       	ldi	r24, 0x31	; 49
+ 558:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 51e:	80 e3       	ldi	r24, 0x30	; 48
- 520:	80 93 61 00 	sts	0x0061, r24
+ 55c:	80 e3       	ldi	r24, 0x30	; 48
+ 55e:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 524:	80 93 62 00 	sts	0x0062, r24
+ 562:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '0';
- 528:	80 93 63 00 	sts	0x0063, r24
+ 566:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 52c:	80 93 64 00 	sts	0x0064, r24
+ 56a:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 56e:	10 92 65 00 	sts	0x0065, r1
 					break;
- 530:	5a c0       	rjmp	.+180    	; 0x5e6 <__vector_13+0x36c>
+ 572:	68 c0       	rjmp	.+208    	; 0x644 <__vector_13+0x3e0>
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,0};
 					DataBuffer[0] = '1';
- 532:	91 e3       	ldi	r25, 0x31	; 49
- 534:	90 93 60 00 	sts	0x0060, r25
+ 574:	91 e3       	ldi	r25, 0x31	; 49
+ 576:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '0';
- 538:	80 e3       	ldi	r24, 0x30	; 48
- 53a:	80 93 61 00 	sts	0x0061, r24
+ 57a:	80 e3       	ldi	r24, 0x30	; 48
+ 57c:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '0';
- 53e:	80 93 62 00 	sts	0x0062, r24
+ 580:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 542:	90 93 63 00 	sts	0x0063, r25
+ 584:	90 93 63 00 	sts	0x0063, r25
 					DataBuffer[4] = '0';
- 546:	80 93 64 00 	sts	0x0064, r24
+ 588:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 58c:	10 92 65 00 	sts	0x0065, r1
 					break;
- 54a:	4d c0       	rjmp	.+154    	; 0x5e6 <__vector_13+0x36c>
+ 590:	59 c0       	rjmp	.+178    	; 0x644 <__vector_13+0x3e0>
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,0};
 					DataBuffer[0] = '1';
- 54c:	91 e3       	ldi	r25, 0x31	; 49
- 54e:	90 93 60 00 	sts	0x0060, r25
+ 592:	91 e3       	ldi	r25, 0x31	; 49
+ 594:	90 93 60 00 	sts	0x0060, r25
 					DataBuffer[1] = '0';
- 552:	80 e3       	ldi	r24, 0x30	; 48
- 554:	80 93 61 00 	sts	0x0061, r24
+ 598:	80 e3       	ldi	r24, 0x30	; 48
+ 59a:	80 93 61 00 	sts	0x0061, r24
 					DataBuffer[2] = '1';
- 558:	90 93 62 00 	sts	0x0062, r25
+ 59e:	90 93 62 00 	sts	0x0062, r25
 					DataBuffer[3] = '0';
- 55c:	80 93 63 00 	sts	0x0063, r24
+ 5a2:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 560:	80 93 64 00 	sts	0x0064, r24
+ 5a6:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 5aa:	10 92 65 00 	sts	0x0065, r1
 					break;
- 564:	40 c0       	rjmp	.+128    	; 0x5e6 <__vector_13+0x36c>
+ 5ae:	4a c0       	rjmp	.+148    	; 0x644 <__vector_13+0x3e0>
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,0};
 					DataBuffer[0] = '1';
- 566:	81 e3       	ldi	r24, 0x31	; 49
- 568:	80 93 60 00 	sts	0x0060, r24
+ 5b0:	81 e3       	ldi	r24, 0x31	; 49
+ 5b2:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '0';
- 56c:	90 e3       	ldi	r25, 0x30	; 48
- 56e:	90 93 61 00 	sts	0x0061, r25
+ 5b6:	90 e3       	ldi	r25, 0x30	; 48
+ 5b8:	90 93 61 00 	sts	0x0061, r25
 					DataBuffer[2] = '1';
- 572:	80 93 62 00 	sts	0x0062, r24
+ 5bc:	80 93 62 00 	sts	0x0062, r24
 					DataBuffer[3] = '1';
- 576:	80 93 63 00 	sts	0x0063, r24
+ 5c0:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 57a:	90 93 64 00 	sts	0x0064, r25
+ 5c4:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';
+ 5c8:	10 92 65 00 	sts	0x0065, r1
 					break;
- 57e:	33 c0       	rjmp	.+102    	; 0x5e6 <__vector_13+0x36c>
+ 5cc:	3b c0       	rjmp	.+118    	; 0x644 <__vector_13+0x3e0>
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,0};
-					DataBuffer[0] = '1';
- 580:	81 e3       	ldi	r24, 0x31	; 49
- 582:	80 93 60 00 	sts	0x0060, r24
-					DataBuffer[1] = '1';
- 586:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '0';
- 58a:	80 e3       	ldi	r24, 0x30	; 48
- 58c:	80 93 62 00 	sts	0x0062, r24
-					DataBuffer[3] = '0';
- 590:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '0';
- 594:	80 93 64 00 	sts	0x0064, r24
-					break;
- 598:	26 c0       	rjmp	.+76     	; 0x5e6 <__vector_13+0x36c>
-
-				case 'd' ://DataBuffer[5] = {1,1,0,1,0};
-					DataBuffer[0] = '1';
- 59a:	81 e3       	ldi	r24, 0x31	; 49
- 59c:	80 93 60 00 	sts	0x0060, r24
-					DataBuffer[1] = '1';
- 5a0:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '0';
- 5a4:	90 e3       	ldi	r25, 0x30	; 48
- 5a6:	90 93 62 00 	sts	0x0062, r25
-					DataBuffer[3] = '1';
- 5aa:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '0';
- 5ae:	90 93 64 00 	sts	0x0064, r25
-					break;
- 5b2:	19 c0       	rjmp	.+50     	; 0x5e6 <__vector_13+0x36c>
-
-				case 'e' :// DataBuffer[5] = {1,1,1,0,0};
-					DataBuffer[0] = '1';
- 5b4:	81 e3       	ldi	r24, 0x31	; 49
- 5b6:	80 93 60 00 	sts	0x0060, r24
-					DataBuffer[1] = '1';
- 5ba:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '1';
- 5be:	80 93 62 00 	sts	0x0062, r24
-					DataBuffer[3] = '0';
- 5c2:	80 e3       	ldi	r24, 0x30	; 48
- 5c4:	80 93 63 00 	sts	0x0063, r24
-					DataBuffer[4] = '0';
- 5c8:	80 93 64 00 	sts	0x0064, r24
-					break;
- 5cc:	0c c0       	rjmp	.+24     	; 0x5e6 <__vector_13+0x36c>
-
-				case 'f' ://DataBuffer[5] = {1,1,1,1,0};
 					DataBuffer[0] = '1';
  5ce:	81 e3       	ldi	r24, 0x31	; 49
  5d0:	80 93 60 00 	sts	0x0060, r24
 					DataBuffer[1] = '1';
  5d4:	80 93 61 00 	sts	0x0061, r24
-					DataBuffer[2] = '1';
- 5d8:	80 93 62 00 	sts	0x0062, r24
-					DataBuffer[3] = '1';
- 5dc:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[2] = '0';
+ 5d8:	80 e3       	ldi	r24, 0x30	; 48
+ 5da:	80 93 62 00 	sts	0x0062, r24
+					DataBuffer[3] = '0';
+ 5de:	80 93 63 00 	sts	0x0063, r24
 					DataBuffer[4] = '0';
- 5e0:	80 e3       	ldi	r24, 0x30	; 48
  5e2:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 5e6:	10 92 65 00 	sts	0x0065, r1
+					break;
+ 5ea:	2c c0       	rjmp	.+88     	; 0x644 <__vector_13+0x3e0>
+
+				case 'd' ://DataBuffer[5] = {1,1,0,1,0};
+					DataBuffer[0] = '1';
+ 5ec:	81 e3       	ldi	r24, 0x31	; 49
+ 5ee:	80 93 60 00 	sts	0x0060, r24
+					DataBuffer[1] = '1';
+ 5f2:	80 93 61 00 	sts	0x0061, r24
+					DataBuffer[2] = '0';
+ 5f6:	90 e3       	ldi	r25, 0x30	; 48
+ 5f8:	90 93 62 00 	sts	0x0062, r25
+					DataBuffer[3] = '1';
+ 5fc:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[4] = '0';
+ 600:	90 93 64 00 	sts	0x0064, r25
+					DataBuffer[5] = '\0';
+ 604:	10 92 65 00 	sts	0x0065, r1
+					break;
+ 608:	1d c0       	rjmp	.+58     	; 0x644 <__vector_13+0x3e0>
+
+				case 'e' :// DataBuffer[5] = {1,1,1,0,0};
+					DataBuffer[0] = '1';
+ 60a:	81 e3       	ldi	r24, 0x31	; 49
+ 60c:	80 93 60 00 	sts	0x0060, r24
+					DataBuffer[1] = '1';
+ 610:	80 93 61 00 	sts	0x0061, r24
+					DataBuffer[2] = '1';
+ 614:	80 93 62 00 	sts	0x0062, r24
+					DataBuffer[3] = '0';
+ 618:	80 e3       	ldi	r24, 0x30	; 48
+ 61a:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[4] = '0';
+ 61e:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 622:	10 92 65 00 	sts	0x0065, r1
+					break;
+ 626:	0e c0       	rjmp	.+28     	; 0x644 <__vector_13+0x3e0>
+
+				case 'f' ://DataBuffer[5] = {1,1,1,1,0};
+					DataBuffer[0] = '1';
+ 628:	81 e3       	ldi	r24, 0x31	; 49
+ 62a:	80 93 60 00 	sts	0x0060, r24
+					DataBuffer[1] = '1';
+ 62e:	80 93 61 00 	sts	0x0061, r24
+					DataBuffer[2] = '1';
+ 632:	80 93 62 00 	sts	0x0062, r24
+					DataBuffer[3] = '1';
+ 636:	80 93 63 00 	sts	0x0063, r24
+					DataBuffer[4] = '0';
+ 63a:	80 e3       	ldi	r24, 0x30	; 48
+ 63c:	80 93 64 00 	sts	0x0064, r24
+					DataBuffer[5] = '\0';
+ 640:	10 92 65 00 	sts	0x0065, r1
 					break;
 			}
 		}
 	ready = 1;
- 5e6:	81 e0       	ldi	r24, 0x01	; 1
- 5e8:	90 e0       	ldi	r25, 0x00	; 0
- 5ea:	90 93 67 00 	sts	0x0067, r25
- 5ee:	80 93 66 00 	sts	0x0066, r24
+ 644:	81 e0       	ldi	r24, 0x01	; 1
+ 646:	90 e0       	ldi	r25, 0x00	; 0
+ 648:	90 93 69 00 	sts	0x0069, r25
+ 64c:	80 93 68 00 	sts	0x0068, r24
 	}
 
 }
- 5f2:	0f 90       	pop	r0
- 5f4:	0f 90       	pop	r0
- 5f6:	0f 90       	pop	r0
- 5f8:	0f 90       	pop	r0
- 5fa:	df 91       	pop	r29
- 5fc:	cf 91       	pop	r28
- 5fe:	ff 91       	pop	r31
- 600:	ef 91       	pop	r30
- 602:	bf 91       	pop	r27
- 604:	af 91       	pop	r26
- 606:	9f 91       	pop	r25
- 608:	8f 91       	pop	r24
- 60a:	7f 91       	pop	r23
- 60c:	6f 91       	pop	r22
- 60e:	5f 91       	pop	r21
- 610:	4f 91       	pop	r20
- 612:	3f 91       	pop	r19
- 614:	2f 91       	pop	r18
- 616:	0f 90       	pop	r0
- 618:	0f be       	out	0x3f, r0	; 63
- 61a:	0f 90       	pop	r0
- 61c:	1f 90       	pop	r1
- 61e:	18 95       	reti
+ 650:	0f 90       	pop	r0
+ 652:	0f 90       	pop	r0
+ 654:	0f 90       	pop	r0
+ 656:	0f 90       	pop	r0
+ 658:	df 91       	pop	r29
+ 65a:	cf 91       	pop	r28
+ 65c:	ff 91       	pop	r31
+ 65e:	ef 91       	pop	r30
+ 660:	bf 91       	pop	r27
+ 662:	af 91       	pop	r26
+ 664:	9f 91       	pop	r25
+ 666:	8f 91       	pop	r24
+ 668:	7f 91       	pop	r23
+ 66a:	6f 91       	pop	r22
+ 66c:	5f 91       	pop	r21
+ 66e:	4f 91       	pop	r20
+ 670:	3f 91       	pop	r19
+ 672:	2f 91       	pop	r18
+ 674:	0f 90       	pop	r0
+ 676:	0f be       	out	0x3f, r0	; 63
+ 678:	0f 90       	pop	r0
+ 67a:	1f 90       	pop	r1
+ 67c:	18 95       	reti
 
-00000620 <main>:
+0000067e <main>:
 
 
 int main()
 {
 	// Initialize USART (with RX interrupt enable)
 	InitUART(9600, 8, 1);
- 620:	21 e0       	ldi	r18, 0x01	; 1
- 622:	48 e0       	ldi	r20, 0x08	; 8
- 624:	60 e8       	ldi	r22, 0x80	; 128
- 626:	75 e2       	ldi	r23, 0x25	; 37
- 628:	80 e0       	ldi	r24, 0x00	; 0
- 62a:	90 e0       	ldi	r25, 0x00	; 0
- 62c:	0e 94 1c 03 	call	0x638	; 0x638 <InitUART>
+ 67e:	21 e0       	ldi	r18, 0x01	; 1
+ 680:	48 e0       	ldi	r20, 0x08	; 8
+ 682:	60 e8       	ldi	r22, 0x80	; 128
+ 684:	75 e2       	ldi	r23, 0x25	; 37
+ 686:	80 e0       	ldi	r24, 0x00	; 0
+ 688:	90 e0       	ldi	r25, 0x00	; 0
+ 68a:	0e 94 4b 03 	call	0x696	; 0x696 <InitUART>
 	// Initialize CTC 
 	InitAtmel();
- 630:	0e 94 a1 03 	call	0x742	; 0x742 <InitAtmel>
+ 68e:	0e 94 d0 03 	call	0x7a0	; 0x7a0 <InitAtmel>
 	// Global interrupt enable
 	sei();
- 634:	78 94       	sei
- 636:	ff cf       	rjmp	.-2      	; 0x636 <main+0x16>
+ 692:	78 94       	sei
+ 694:	ff cf       	rjmp	.-2      	; 0x694 <main+0x16>
 
-00000638 <InitUART>:
+00000696 <InitUART>:
 Parameters:
 	BaudRate: Wanted Baud Rate.
 	Databits: Wanted number of Data Bits.
 *************************************************************************/
 void InitUART(unsigned long BaudRate, unsigned char DataBit, unsigned char RX_int  )
 {
- 638:	0f 93       	push	r16
- 63a:	1f 93       	push	r17
- 63c:	52 2f       	mov	r21, r18
+ 696:	0f 93       	push	r16
+ 698:	1f 93       	push	r17
+ 69a:	52 2f       	mov	r21, r18
 unsigned int TempUBRR;
 
   if ((BaudRate >= 110) && (BaudRate <= 115200) && (DataBit >=5) && (DataBit <= 8))
- 63e:	8b 01       	movw	r16, r22
- 640:	9c 01       	movw	r18, r24
- 642:	0e 56       	subi	r16, 0x6E	; 110
- 644:	11 09       	sbc	r17, r1
- 646:	21 09       	sbc	r18, r1
- 648:	31 09       	sbc	r19, r1
- 64a:	03 39       	cpi	r16, 0x93	; 147
- 64c:	11 4c       	sbci	r17, 0xC1	; 193
- 64e:	21 40       	sbci	r18, 0x01	; 1
- 650:	31 05       	cpc	r19, r1
- 652:	80 f5       	brcc	.+96     	; 0x6b4 <InitUART+0x7c>
- 654:	2b ef       	ldi	r18, 0xFB	; 251
- 656:	24 0f       	add	r18, r20
- 658:	24 30       	cpi	r18, 0x04	; 4
- 65a:	60 f5       	brcc	.+88     	; 0x6b4 <InitUART+0x7c>
+ 69c:	8b 01       	movw	r16, r22
+ 69e:	9c 01       	movw	r18, r24
+ 6a0:	0e 56       	subi	r16, 0x6E	; 110
+ 6a2:	11 09       	sbc	r17, r1
+ 6a4:	21 09       	sbc	r18, r1
+ 6a6:	31 09       	sbc	r19, r1
+ 6a8:	03 39       	cpi	r16, 0x93	; 147
+ 6aa:	11 4c       	sbci	r17, 0xC1	; 193
+ 6ac:	21 40       	sbci	r18, 0x01	; 1
+ 6ae:	31 05       	cpc	r19, r1
+ 6b0:	80 f5       	brcc	.+96     	; 0x712 <InitUART+0x7c>
+ 6b2:	2b ef       	ldi	r18, 0xFB	; 251
+ 6b4:	24 0f       	add	r18, r20
+ 6b6:	24 30       	cpi	r18, 0x04	; 4
+ 6b8:	60 f5       	brcc	.+88     	; 0x712 <InitUART+0x7c>
   { 
     // "Normal" clock, no multiprocesser mode (= default)
     UCSRA = 0b00100000;
- 65c:	20 e2       	ldi	r18, 0x20	; 32
- 65e:	2b b9       	out	0x0b, r18	; 11
+ 6ba:	20 e2       	ldi	r18, 0x20	; 32
+ 6bc:	2b b9       	out	0x0b, r18	; 11
     // No interrupts enabled
     // Receiver enabled
     // Transmitter enabled
     // No 9 bit operation
     UCSRB = 0b00011000;
- 660:	28 e1       	ldi	r18, 0x18	; 24
- 662:	2a b9       	out	0x0a, r18	; 10
+ 6be:	28 e1       	ldi	r18, 0x18	; 24
+ 6c0:	2a b9       	out	0x0a, r18	; 10
     // Enable RX interrupts if wanted
     if (RX_int)
- 664:	51 11       	cpse	r21, r1
+ 6c2:	51 11       	cpse	r21, r1
       UCSRB |= 0b10000000;
- 666:	57 9a       	sbi	0x0a, 7	; 10
+ 6c4:	57 9a       	sbi	0x0a, 7	; 10
     // Asynchronous operation, 1 stop bit, no parity
     // Bit7 always has to be 1
     // Bit 2 and bit 1 controlles the number of databits
     UCSRC = 0b10000000 | (DataBit-5)<<1;
- 668:	24 2f       	mov	r18, r20
- 66a:	30 e0       	ldi	r19, 0x00	; 0
- 66c:	25 50       	subi	r18, 0x05	; 5
- 66e:	31 09       	sbc	r19, r1
- 670:	22 0f       	add	r18, r18
- 672:	33 1f       	adc	r19, r19
- 674:	20 68       	ori	r18, 0x80	; 128
- 676:	20 bd       	out	0x20, r18	; 32
+ 6c6:	24 2f       	mov	r18, r20
+ 6c8:	30 e0       	ldi	r19, 0x00	; 0
+ 6ca:	25 50       	subi	r18, 0x05	; 5
+ 6cc:	31 09       	sbc	r19, r1
+ 6ce:	22 0f       	add	r18, r18
+ 6d0:	33 1f       	adc	r19, r19
+ 6d2:	20 68       	ori	r18, 0x80	; 128
+ 6d4:	20 bd       	out	0x20, r18	; 32
     // Set Baud Rate according to the parameter BaudRate:
     // Select Baud Rate (first store "UBRRH--UBRRL" in local 16-bit variable,
     //                   then write the two 8-bit registers seperately):
     TempUBRR = XTAL/(16*BaudRate) - 1;
- 678:	dc 01       	movw	r26, r24
- 67a:	cb 01       	movw	r24, r22
- 67c:	88 0f       	add	r24, r24
- 67e:	99 1f       	adc	r25, r25
- 680:	aa 1f       	adc	r26, r26
- 682:	bb 1f       	adc	r27, r27
- 684:	88 0f       	add	r24, r24
- 686:	99 1f       	adc	r25, r25
- 688:	aa 1f       	adc	r26, r26
- 68a:	bb 1f       	adc	r27, r27
- 68c:	9c 01       	movw	r18, r24
- 68e:	ad 01       	movw	r20, r26
- 690:	22 0f       	add	r18, r18
- 692:	33 1f       	adc	r19, r19
- 694:	44 1f       	adc	r20, r20
- 696:	55 1f       	adc	r21, r21
- 698:	22 0f       	add	r18, r18
- 69a:	33 1f       	adc	r19, r19
- 69c:	44 1f       	adc	r20, r20
- 69e:	55 1f       	adc	r21, r21
- 6a0:	60 e0       	ldi	r22, 0x00	; 0
- 6a2:	70 e4       	ldi	r23, 0x40	; 64
- 6a4:	88 e3       	ldi	r24, 0x38	; 56
- 6a6:	90 e0       	ldi	r25, 0x00	; 0
- 6a8:	0e 94 af 03 	call	0x75e	; 0x75e <__udivmodsi4>
- 6ac:	21 50       	subi	r18, 0x01	; 1
- 6ae:	31 09       	sbc	r19, r1
+ 6d6:	dc 01       	movw	r26, r24
+ 6d8:	cb 01       	movw	r24, r22
+ 6da:	88 0f       	add	r24, r24
+ 6dc:	99 1f       	adc	r25, r25
+ 6de:	aa 1f       	adc	r26, r26
+ 6e0:	bb 1f       	adc	r27, r27
+ 6e2:	88 0f       	add	r24, r24
+ 6e4:	99 1f       	adc	r25, r25
+ 6e6:	aa 1f       	adc	r26, r26
+ 6e8:	bb 1f       	adc	r27, r27
+ 6ea:	9c 01       	movw	r18, r24
+ 6ec:	ad 01       	movw	r20, r26
+ 6ee:	22 0f       	add	r18, r18
+ 6f0:	33 1f       	adc	r19, r19
+ 6f2:	44 1f       	adc	r20, r20
+ 6f4:	55 1f       	adc	r21, r21
+ 6f6:	22 0f       	add	r18, r18
+ 6f8:	33 1f       	adc	r19, r19
+ 6fa:	44 1f       	adc	r20, r20
+ 6fc:	55 1f       	adc	r21, r21
+ 6fe:	60 e0       	ldi	r22, 0x00	; 0
+ 700:	70 e4       	ldi	r23, 0x40	; 64
+ 702:	88 e3       	ldi	r24, 0x38	; 56
+ 704:	90 e0       	ldi	r25, 0x00	; 0
+ 706:	0e 94 de 03 	call	0x7bc	; 0x7bc <__udivmodsi4>
+ 70a:	21 50       	subi	r18, 0x01	; 1
+ 70c:	31 09       	sbc	r19, r1
     // Write upper part of UBRR
     UBRRH = TempUBRR >> 8;
- 6b0:	30 bd       	out	0x20, r19	; 32
+ 70e:	30 bd       	out	0x20, r19	; 32
     // Write lower part of UBRR
     UBRRL = TempUBRR;
- 6b2:	29 b9       	out	0x09, r18	; 9
+ 710:	29 b9       	out	0x09, r18	; 9
   }  
 }
- 6b4:	1f 91       	pop	r17
- 6b6:	0f 91       	pop	r16
- 6b8:	08 95       	ret
+ 712:	1f 91       	pop	r17
+ 714:	0f 91       	pop	r16
+ 716:	08 95       	ret
 
-000006ba <ReadChar>:
+00000718 <ReadChar>:
 	Then this character is returned.
 *************************************************************************/
 char ReadChar()
 {
   // Wait for new character received
   while ( (UCSRA & (1<<7)) == 0 )
- 6ba:	5f 9b       	sbis	0x0b, 7	; 11
- 6bc:	fe cf       	rjmp	.-4      	; 0x6ba <ReadChar>
+ 718:	5f 9b       	sbis	0x0b, 7	; 11
+ 71a:	fe cf       	rjmp	.-4      	; 0x718 <ReadChar>
   {}                        
   // Then return it
   return UDR;
- 6be:	8c b1       	in	r24, 0x0c	; 12
+ 71c:	8c b1       	in	r24, 0x0c	; 12
 }
- 6c0:	08 95       	ret
+ 71e:	08 95       	ret
 
-000006c2 <ReadString>:
+00000720 <ReadString>:
 tæller stringlenght en op
 sætter ReadChar ind i NextChar 
 og når den er færdig med loopet ligger den NULL ind i buffern
 *************************************************************************/
 void ReadString(char* Buffer, int MaxLenght)
 {
- 6c2:	ef 92       	push	r14
- 6c4:	ff 92       	push	r15
- 6c6:	0f 93       	push	r16
- 6c8:	1f 93       	push	r17
- 6ca:	cf 93       	push	r28
- 6cc:	df 93       	push	r29
- 6ce:	8c 01       	movw	r16, r24
- 6d0:	7b 01       	movw	r14, r22
+ 720:	ef 92       	push	r14
+ 722:	ff 92       	push	r15
+ 724:	0f 93       	push	r16
+ 726:	1f 93       	push	r17
+ 728:	cf 93       	push	r28
+ 72a:	df 93       	push	r29
+ 72c:	8c 01       	movw	r16, r24
+ 72e:	7b 01       	movw	r14, r22
 	char NextChar;
 	int StringLenght=0;
 	
 	NextChar = ReadChar();
- 6d2:	0e 94 5d 03 	call	0x6ba	; 0x6ba <ReadChar>
+ 730:	0e 94 8c 03 	call	0x718	; 0x718 <ReadChar>
 	
 	while (NextChar != '\r' && StringLenght < MaxLenght)
- 6d6:	8d 30       	cpi	r24, 0x0D	; 13
- 6d8:	99 f0       	breq	.+38     	; 0x700 <ReadString+0x3e>
- 6da:	1e 14       	cp	r1, r14
- 6dc:	1f 04       	cpc	r1, r15
- 6de:	84 f4       	brge	.+32     	; 0x700 <ReadString+0x3e>
- 6e0:	f8 01       	movw	r30, r16
- 6e2:	e0 0e       	add	r14, r16
- 6e4:	f1 1e       	adc	r15, r17
- 6e6:	ef 01       	movw	r28, r30
- 6e8:	21 96       	adiw	r28, 0x01	; 1
- 6ea:	8e 01       	movw	r16, r28
+ 734:	8d 30       	cpi	r24, 0x0D	; 13
+ 736:	99 f0       	breq	.+38     	; 0x75e <ReadString+0x3e>
+ 738:	1e 14       	cp	r1, r14
+ 73a:	1f 04       	cpc	r1, r15
+ 73c:	84 f4       	brge	.+32     	; 0x75e <ReadString+0x3e>
+ 73e:	f8 01       	movw	r30, r16
+ 740:	e0 0e       	add	r14, r16
+ 742:	f1 1e       	adc	r15, r17
+ 744:	ef 01       	movw	r28, r30
+ 746:	21 96       	adiw	r28, 0x01	; 1
+ 748:	8e 01       	movw	r16, r28
 	{
 		*Buffer++ = NextChar;
- 6ec:	80 83       	st	Z, r24
+ 74a:	80 83       	st	Z, r24
 		StringLenght++;
 		NextChar = ReadChar();
- 6ee:	0e 94 5d 03 	call	0x6ba	; 0x6ba <ReadChar>
+ 74c:	0e 94 8c 03 	call	0x718	; 0x718 <ReadChar>
 	char NextChar;
 	int StringLenght=0;
 	
 	NextChar = ReadChar();
 	
 	while (NextChar != '\r' && StringLenght < MaxLenght)
- 6f2:	8d 30       	cpi	r24, 0x0D	; 13
- 6f4:	29 f0       	breq	.+10     	; 0x700 <ReadString+0x3e>
- 6f6:	ce 15       	cp	r28, r14
- 6f8:	df 05       	cpc	r29, r15
- 6fa:	11 f0       	breq	.+4      	; 0x700 <ReadString+0x3e>
- 6fc:	fe 01       	movw	r30, r28
- 6fe:	f3 cf       	rjmp	.-26     	; 0x6e6 <ReadString+0x24>
+ 750:	8d 30       	cpi	r24, 0x0D	; 13
+ 752:	29 f0       	breq	.+10     	; 0x75e <ReadString+0x3e>
+ 754:	ce 15       	cp	r28, r14
+ 756:	df 05       	cpc	r29, r15
+ 758:	11 f0       	breq	.+4      	; 0x75e <ReadString+0x3e>
+ 75a:	fe 01       	movw	r30, r28
+ 75c:	f3 cf       	rjmp	.-26     	; 0x744 <ReadString+0x24>
 	{
 		*Buffer++ = NextChar;
 		StringLenght++;
 		NextChar = ReadChar();
 	}
 	*Buffer = '\0';
- 700:	f8 01       	movw	r30, r16
- 702:	10 82       	st	Z, r1
+ 75e:	f8 01       	movw	r30, r16
+ 760:	10 82       	st	Z, r1
 }
- 704:	df 91       	pop	r29
- 706:	cf 91       	pop	r28
- 708:	1f 91       	pop	r17
- 70a:	0f 91       	pop	r16
- 70c:	ff 90       	pop	r15
- 70e:	ef 90       	pop	r14
- 710:	08 95       	ret
+ 762:	df 91       	pop	r29
+ 764:	cf 91       	pop	r28
+ 766:	1f 91       	pop	r17
+ 768:	0f 91       	pop	r16
+ 76a:	ff 90       	pop	r15
+ 76c:	ef 90       	pop	r14
+ 76e:	08 95       	ret
 
-00000712 <Burst>:
+00000770 <Burst>:
 ----------------------------------------------------------------------*/
 
  
 void Burst(void)
 {
     DDRB |=(1<<PB3);
- 712:	bb 9a       	sbi	0x17, 3	; 23
+ 770:	bb 9a       	sbi	0x17, 3	; 23
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 714:	8d ee       	ldi	r24, 0xED	; 237
- 716:	92 e0       	ldi	r25, 0x02	; 2
- 718:	01 97       	sbiw	r24, 0x01	; 1
- 71a:	f1 f7       	brne	.-4      	; 0x718 <Burst+0x6>
- 71c:	00 c0       	rjmp	.+0      	; 0x71e <Burst+0xc>
- 71e:	00 00       	nop
+ 772:	8d ee       	ldi	r24, 0xED	; 237
+ 774:	92 e0       	ldi	r25, 0x02	; 2
+ 776:	01 97       	sbiw	r24, 0x01	; 1
+ 778:	f1 f7       	brne	.-4      	; 0x776 <Burst+0x6>
+ 77a:	00 c0       	rjmp	.+0      	; 0x77c <Burst+0xc>
+ 77c:	00 00       	nop
     _delay_ms(3);
 	DDRB |=(0<<PB3);	   
- 720:	87 b3       	in	r24, 0x17	; 23
- 722:	87 bb       	out	0x17, r24	; 23
- 724:	08 95       	ret
+ 77e:	87 b3       	in	r24, 0x17	; 23
+ 780:	87 bb       	out	0x17, r24	; 23
+ 782:	08 95       	ret
 
-00000726 <__vector_10>:
+00000784 <__vector_10>:
  1200005
  
 ---------------------------------------------------------------------*/
 #define OCR0_VALUE 14
  ISR(TIMER0_COMP_vect)
  {
- 726:	1f 92       	push	r1
- 728:	0f 92       	push	r0
- 72a:	0f b6       	in	r0, 0x3f	; 63
- 72c:	0f 92       	push	r0
- 72e:	11 24       	eor	r1, r1
- 730:	8f 93       	push	r24
+ 784:	1f 92       	push	r1
+ 786:	0f 92       	push	r0
+ 788:	0f b6       	in	r0, 0x3f	; 63
+ 78a:	0f 92       	push	r0
+ 78c:	11 24       	eor	r1, r1
+ 78e:	8f 93       	push	r24
          OCR0 = (uint8_t)OCR0_VALUE;
- 732:	8e e0       	ldi	r24, 0x0E	; 14
- 734:	8c bf       	out	0x3c, r24	; 60
+ 790:	8e e0       	ldi	r24, 0x0E	; 14
+ 792:	8c bf       	out	0x3c, r24	; 60
  }
- 736:	8f 91       	pop	r24
- 738:	0f 90       	pop	r0
- 73a:	0f be       	out	0x3f, r0	; 63
- 73c:	0f 90       	pop	r0
- 73e:	1f 90       	pop	r1
- 740:	18 95       	reti
+ 794:	8f 91       	pop	r24
+ 796:	0f 90       	pop	r0
+ 798:	0f be       	out	0x3f, r0	; 63
+ 79a:	0f 90       	pop	r0
+ 79c:	1f 90       	pop	r1
+ 79e:	18 95       	reti
 
-00000742 <InitAtmel>:
+000007a0 <InitAtmel>:
 CTC - couter initial value
 CTC - counter compare interrupt
 ---------------------------------------------------------------------*/
  void InitAtmel(void)
  {
 	 DDRB |= (0<<PB2) | (0<<PB0);
- 742:	87 b3       	in	r24, 0x17	; 23
- 744:	87 bb       	out	0x17, r24	; 23
+ 7a0:	87 b3       	in	r24, 0x17	; 23
+ 7a2:	87 bb       	out	0x17, r24	; 23
 	 MCUCSR = 0b01000000;
- 746:	80 e4       	ldi	r24, 0x40	; 64
- 748:	84 bf       	out	0x34, r24	; 52
+ 7a4:	80 e4       	ldi	r24, 0x40	; 64
+ 7a6:	84 bf       	out	0x34, r24	; 52
 	 GICR |= 0b00100000;
- 74a:	8b b7       	in	r24, 0x3b	; 59
- 74c:	80 62       	ori	r24, 0x20	; 32
- 74e:	8b bf       	out	0x3b, r24	; 59
+ 7a8:	8b b7       	in	r24, 0x3b	; 59
+ 7aa:	80 62       	ori	r24, 0x20	; 32
+ 7ac:	8b bf       	out	0x3b, r24	; 59
 	 TCCR0 = 0b01101001;
- 750:	89 e6       	ldi	r24, 0x69	; 105
- 752:	83 bf       	out	0x33, r24	; 51
+ 7ae:	89 e6       	ldi	r24, 0x69	; 105
+ 7b0:	83 bf       	out	0x33, r24	; 51
 	 TCNT0 = 0;
- 754:	12 be       	out	0x32, r1	; 50
+ 7b2:	12 be       	out	0x32, r1	; 50
 	 TIMSK |=(1<<OCIE0);
- 756:	89 b7       	in	r24, 0x39	; 57
- 758:	82 60       	ori	r24, 0x02	; 2
- 75a:	89 bf       	out	0x39, r24	; 57
- 75c:	08 95       	ret
+ 7b4:	89 b7       	in	r24, 0x39	; 57
+ 7b6:	82 60       	ori	r24, 0x02	; 2
+ 7b8:	89 bf       	out	0x39, r24	; 57
+ 7ba:	08 95       	ret
 
-0000075e <__udivmodsi4>:
- 75e:	a1 e2       	ldi	r26, 0x21	; 33
- 760:	1a 2e       	mov	r1, r26
- 762:	aa 1b       	sub	r26, r26
- 764:	bb 1b       	sub	r27, r27
- 766:	fd 01       	movw	r30, r26
- 768:	0d c0       	rjmp	.+26     	; 0x784 <__udivmodsi4_ep>
+000007bc <__udivmodsi4>:
+ 7bc:	a1 e2       	ldi	r26, 0x21	; 33
+ 7be:	1a 2e       	mov	r1, r26
+ 7c0:	aa 1b       	sub	r26, r26
+ 7c2:	bb 1b       	sub	r27, r27
+ 7c4:	fd 01       	movw	r30, r26
+ 7c6:	0d c0       	rjmp	.+26     	; 0x7e2 <__udivmodsi4_ep>
 
-0000076a <__udivmodsi4_loop>:
- 76a:	aa 1f       	adc	r26, r26
- 76c:	bb 1f       	adc	r27, r27
- 76e:	ee 1f       	adc	r30, r30
- 770:	ff 1f       	adc	r31, r31
- 772:	a2 17       	cp	r26, r18
- 774:	b3 07       	cpc	r27, r19
- 776:	e4 07       	cpc	r30, r20
- 778:	f5 07       	cpc	r31, r21
- 77a:	20 f0       	brcs	.+8      	; 0x784 <__udivmodsi4_ep>
- 77c:	a2 1b       	sub	r26, r18
- 77e:	b3 0b       	sbc	r27, r19
- 780:	e4 0b       	sbc	r30, r20
- 782:	f5 0b       	sbc	r31, r21
+000007c8 <__udivmodsi4_loop>:
+ 7c8:	aa 1f       	adc	r26, r26
+ 7ca:	bb 1f       	adc	r27, r27
+ 7cc:	ee 1f       	adc	r30, r30
+ 7ce:	ff 1f       	adc	r31, r31
+ 7d0:	a2 17       	cp	r26, r18
+ 7d2:	b3 07       	cpc	r27, r19
+ 7d4:	e4 07       	cpc	r30, r20
+ 7d6:	f5 07       	cpc	r31, r21
+ 7d8:	20 f0       	brcs	.+8      	; 0x7e2 <__udivmodsi4_ep>
+ 7da:	a2 1b       	sub	r26, r18
+ 7dc:	b3 0b       	sbc	r27, r19
+ 7de:	e4 0b       	sbc	r30, r20
+ 7e0:	f5 0b       	sbc	r31, r21
 
-00000784 <__udivmodsi4_ep>:
- 784:	66 1f       	adc	r22, r22
- 786:	77 1f       	adc	r23, r23
- 788:	88 1f       	adc	r24, r24
- 78a:	99 1f       	adc	r25, r25
- 78c:	1a 94       	dec	r1
- 78e:	69 f7       	brne	.-38     	; 0x76a <__udivmodsi4_loop>
- 790:	60 95       	com	r22
- 792:	70 95       	com	r23
- 794:	80 95       	com	r24
- 796:	90 95       	com	r25
- 798:	9b 01       	movw	r18, r22
- 79a:	ac 01       	movw	r20, r24
- 79c:	bd 01       	movw	r22, r26
- 79e:	cf 01       	movw	r24, r30
- 7a0:	08 95       	ret
+000007e2 <__udivmodsi4_ep>:
+ 7e2:	66 1f       	adc	r22, r22
+ 7e4:	77 1f       	adc	r23, r23
+ 7e6:	88 1f       	adc	r24, r24
+ 7e8:	99 1f       	adc	r25, r25
+ 7ea:	1a 94       	dec	r1
+ 7ec:	69 f7       	brne	.-38     	; 0x7c8 <__udivmodsi4_loop>
+ 7ee:	60 95       	com	r22
+ 7f0:	70 95       	com	r23
+ 7f2:	80 95       	com	r24
+ 7f4:	90 95       	com	r25
+ 7f6:	9b 01       	movw	r18, r22
+ 7f8:	ac 01       	movw	r20, r24
+ 7fa:	bd 01       	movw	r22, r26
+ 7fc:	cf 01       	movw	r24, r30
+ 7fe:	08 95       	ret
 
-000007a2 <__tablejump2__>:
- 7a2:	ee 0f       	add	r30, r30
- 7a4:	ff 1f       	adc	r31, r31
+00000800 <__tablejump2__>:
+ 800:	ee 0f       	add	r30, r30
+ 802:	ff 1f       	adc	r31, r31
 
-000007a6 <__tablejump__>:
- 7a6:	05 90       	lpm	r0, Z+
- 7a8:	f4 91       	lpm	r31, Z
- 7aa:	e0 2d       	mov	r30, r0
- 7ac:	09 94       	ijmp
+00000804 <__tablejump__>:
+ 804:	05 90       	lpm	r0, Z+
+ 806:	f4 91       	lpm	r31, Z
+ 808:	e0 2d       	mov	r30, r0
+ 80a:	09 94       	ijmp
 
-000007ae <_exit>:
- 7ae:	f8 94       	cli
+0000080c <_exit>:
+ 80c:	f8 94       	cli
 
-000007b0 <__stop_program>:
- 7b0:	ff cf       	rjmp	.-2      	; 0x7b0 <__stop_program>
+0000080e <__stop_program>:
+ 80e:	ff cf       	rjmp	.-2      	; 0x80e <__stop_program>
