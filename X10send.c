@@ -65,13 +65,11 @@ enable global interrupts
  void InitAtmel(void)
  {
 	 DDRB |= (0<<PB2) | (0<<PB0);
-	 DDRC = 0xff;
 	 MCUCSR = 0b01000000;
 	 GICR |= 0b00100000;
 	 TCCR0 = 0b01101001;
 	 TCNT0 = 0;
 	 TIMSK |=(1<<OCIE0);
-	 sei();
  }
  
  

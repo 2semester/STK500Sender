@@ -66,10 +66,7 @@ ISR(INT2_vect) //INT2 til 'flag'
          if (sendcounter == 32)
          {
                  ready = 0;
-         }
-         
-         
-       
+         }    
  }
 ISR (USART_RXC_vect){
 	char Buffer[4];
@@ -80,9 +77,10 @@ ISR (USART_RXC_vect){
 	{
 		for(int i = 0;i < 4; i++)
 		{
-			int tmpBuffer[8] = {0};
+			int tmpBuffer[9];
 			itoa(tmpBuffer, Buffer[i], 2);
-			DataBuffer[i*8] = tmpBuffer;		//CHECK OM DET ER MUGLIGT
+			DataBuffer[i] = tmpBuffer;
+			SendString("lol");		//CHECK OM DET ER MUGLIGT
 			SendString(DataBuffer);
 		}
 	ready = 1;
