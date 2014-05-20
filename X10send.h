@@ -4,8 +4,8 @@
  * Created: 19-May-14 15:40:56
  *  Author: Kris
  */ 
-#ifndef INCFILE1_H_
-#define INCFILE1_H_
+#ifndef X10SEND_H
+#define X10SEND_H
 void InitAtmel(void);
 int convertToBinary(char *Buffer);
 void SendByte(int convertToBinary);
@@ -14,4 +14,4 @@ void switchSetCTC(void);
 void Send_1(void);
 void Send_0(void);
 void Burst();
-#endif
+#endif 

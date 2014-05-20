@@ -2,8 +2,9 @@
 #define MAIN_H
 
 #define ARRAY 4
-volatile int flag = 0; 
-int sendcounter = 0, ready = 0;
-char Buffer[4] = {0};
-int DataBuffer[5] = {0};
-#endif
+volatile uint8_t flag = 1; 
+int sendcounter = 0;
+int ready = 0;
+char Buffer[4];
+int DataBuffer[5];
+#endif 

@@ -1,150 +1,337 @@
-/********************************************
-* MSYS, LAB 12                              *
-* Test program for Interrupt driven UART    *
-* driver.                                   *
-*                                           *
-* STK500 setup:                             *
-* Header "RS232 spare" connected to RXD/TXD *
-*   RXD = PORTD, bit0                       *
-*   TXD = PORTD, bit1                       *
-*                                           *
-* Henning Hargaard 27/11 2013               *
-*********************************************/
 #include <avr/io.h> // std input output lib
-#include <avr/interrupt.h> // interrupt enableta
-#include <stdlib.h>  // itoa
+#include <avr/interrupt.h> // interrupt enable
 #include "uart_int.h"
 #include "main.h"
 #include "X10send.h"
 
 
-ISR(INT2_vect) //INT2 til 'flag'
- {
-         flag++;
-         /* todo list
-         skal måske lave en if sætning til når flag skifter fra 255 til 0 så dan starter på 2
-         import af data og sætte ready = 1
-         
-         todo måske hvis jeg ikke sender et stort array
-         ready = 0 ?/!
-         ready = 1 unit
-         ready = 2 on/off
-         ready = 3 carriage return
-         */
-         
-         if(ready == 1)
-         {
-         
-                 if(flag % 2 == 0)
-                 {
-                        if (DataBuffer[sendcounter] == 0)
-                        {
-							//nothing
-                        }
-						else
-						{
-							Burst();
-						}
-                                 
-                 }
+/*---------------------------------------------------------------------
+når der kommer et zero crossing interrupt
+flag tælles 1 op
+der checkes for om ny data er modtaget
+der checkes for om det er en 1 eller 0 cycel
+hvis det er et 0 cycel og en 0 bit. sendes der et burst ellers sker der ingenting 
+hvis det er et 1 cycel og en 1 bit. sendes der et burst ellers sker der ingenting 
+når der er sent et burst tælles send counteren en op og vi kikker på den næste plads
+når 5 bit er sent sættes ready til 0 og vi stopper med at sende.
+----------------------------------------------------------------------*/
+ISR(INT2_vect)
+{
+flag++;
+if(ready == 1)
+{
+	if(flag % 2 == 0)
+    {
+		if (DataBuffer[sendcounter] == 0)
+        {
+			//nothing
+        }
+		else
+		{
+			Burst();
+		}
+    }
                  
-                 if(flag % 2 == 1)
-                 {
-					if (DataBuffer[sendcounter] == 1)
-					{
-						Burst();
-					}
-					else
-					{
-						//nothing
-					}
-					sendcounter++;
-					flag = 0;
-				 }
-		 }
+    if(flag % 2 == 1)
+	{
+		if (DataBuffer[sendcounter] == 1)
+		{
+			Burst();
+		}
+		else
+		{
+			//nothing
+		}
+		sendcounter++;
+	}
+
          
-         if (sendcounter == 32)
-         {
-                 ready = 0;
-         }    
- }
+    if (sendcounter == 5)
+    {
+		ready = 0;
+		DataBuffer[0] = 0;
+		DataBuffer[1] = 0;
+		DataBuffer[2] = 0;
+		DataBuffer[3] = 0;
+		DataBuffer[4] = 0;
+	}		
+}
+} 
+ 
+ 
  /*
- 
- 
- 
+ der laves et lokalt array som bliver fyldt med data fra usart.
+ hvis den første char er ! eller ? 
+ checkes der for om der skal tændes eller slukkes for lys
+ derefter senden den et binær array til databuffern som skal sendes via zero crossing interrupts
  */
- 
-ISR (USART_RXC_vect){
+ISR (USART_RXC_vect)
+{ 
 	char Buffer[4];
 	ReadString(&Buffer,ARRAY);
 	if (Buffer[0] == '!' || Buffer[0] == '?')
 	{
 		if (Buffer[2] == '0')
 		{
-		switch (Buffer[1]) 
-			case '1' : DataBuffer[5] = {0,0,0,1,1}; break;
-			case '2' : DataBuffer[5] = {0,0,1,0,1}; break;
-			case '3' : DataBuffer[5] = {0,0,1,1,1}; break;
-			case '4' : DataBuffer[5] = {0,1,0,0,1}; break;
-			case '5' : DataBuffer[5] = {0,1,0,1,1}; break;
-			case '6' : DataBuffer[5] = {0,1,1,0,1}; break;
-			case '7' : DataBuffer[5] = {0,1,1,1,1}; break;
-			case '8' : DataBuffer[5] = {1,0,0,0,1}; break;
-			case '9' : DataBuffer[5] = {1,0,0,1,1}; break;
-			case 'a' : DataBuffer[5] = {1,0,1,0,1}; break;
-			case 'b' : DataBuffer[5] = {1,0,1,1,1}; break;
-			case 'c' : DataBuffer[5] = {1,1,0,0,1}; break;
-			case 'd' : DataBuffer[5] = {1,1,0,1,1}; break;
-			case 'e' : DataBuffer[5] = {1,1,1,0,1}; break;
-			case 'f' : DataBuffer[5] = {1,1,1,1,1}; break;
-		}
-		if (Buffer[2] == 'f')
-		{
-		switch (Buffer[1])
-			case '1' : DataBuffer[5] = {0,0,0,1,0}; break;
-			case '2' : DataBuffer[5] = {0,0,1,0,0}; break;
-			case '3' : DataBuffer[5] = {0,0,1,1,0}; break;
-			case '4' : DataBuffer[5] = {0,1,0,0,0}; break;
-			case '5' : DataBuffer[5] = {0,1,0,1,0}; break;
-			case '6' : DataBuffer[5] = {0,1,1,0,0}; break;
-			case '7' : DataBuffer[5] = {0,1,1,1,0}; break;
-			case '8' : DataBuffer[5] = {1,0,0,0,0}; break;
-			case '9' : DataBuffer[5] = {1,0,0,1,0}; break;
-			case 'a' : DataBuffer[5] = {1,0,1,0,0}; break;
-			case 'b' : DataBuffer[5] = {1,0,1,1,0}; break;
-			case 'c' : DataBuffer[5] = {1,1,0,0,0}; break;
-			case 'd' : DataBuffer[5] = {1,1,0,1,0}; break;
-			case 'e' : DataBuffer[5] = {1,1,1,0,0}; break;
-			case 'f' : DataBuffer[5] = {1,1,1,1,0}; break;
+			switch (Buffer[1])
+			{ 
+				case '1' ://DataBuffer[5] = {0,0,0,1,1}; 
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1; 
+					break;
 
-		}		
-		/*
-		for(int i = 0;i < 4; i++)
-		{
-			char tmpBuffer[9];
-			// konverter char i Buffer til binaer i tmpBuffer
-			// Fyld tmpBuffer i DataBuffer
-			SendString("lol");
-			SendString(DataBuffer);
+				case '2' ://DataBuffer[5] = {0,0,1,0,1}; 
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;				 
+					break;
+
+				case '3' ://DataBuffer[5] = {0,0,1,1,1};  
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case '4' ://DataBuffer[5] = {0,1,0,0,1}; 
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+
+				case '5' ://DataBuffer[5] = {0,1,0,1,1}; 
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case '6' ://DataBuffer[5] = {0,1,1,0,1};  
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+
+				case '7' ://DataBuffer[5] = {0,1,1,1,1}; 
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case '8' :// DataBuffer[5] = {1,0,0,0,1};  
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+
+				case '9' ://DataBuffer[5] = {1,0,0,1,1};  
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case 'a' ://DataBuffer[5] = {1,0,1,0,1}; 
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+
+				case 'b' ://DataBuffer[5] = {1,0,1,1,1};  
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case 'c' ://DataBuffer[5] = {1,1,0,0,1}; 
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+
+				case 'd' ://DataBuffer[5] = {1,1,0,1,1};
+			 
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 1;
+					break;
+
+				case 'e' :// DataBuffer[5] = {1,1,1,0,1};  
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 1;
+					break;
+			}
 		}
-		*/
+
+		if (Buffer[2] == '0')
+		{
+			switch (Buffer[1])
+			{
+				case '1' ://DataBuffer[5] = {0,0,0,1,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case '2' ://DataBuffer[5] = {0,0,1,0,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case '3' ://DataBuffer[5] = {0,0,1,1,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case '4' ://DataBuffer[5] = {0,1,0,0,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case '5' ://DataBuffer[5] = {0,1,0,1,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case '6' ://DataBuffer[5] = {0,1,1,0,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case '7' ://DataBuffer[5] = {0,1,1,1,0};
+					DataBuffer[0] = 0;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case '8' :// DataBuffer[5] = {1,0,0,0,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case '9' ://DataBuffer[5] = {1,0,0,1,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'a' ://DataBuffer[5] = {1,0,1,0,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'b' ://DataBuffer[5] = {1,0,1,1,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 0;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'c' ://DataBuffer[5] = {1,1,0,0,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'd' ://DataBuffer[5] = {1,1,0,1,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 0;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'e' :// DataBuffer[5] = {1,1,1,0,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 0;
+					DataBuffer[4] = 0;
+					break;
+
+				case 'f' ://DataBuffer[5] = {1,1,1,1,0};
+					DataBuffer[0] = 1;
+					DataBuffer[1] = 1;
+					DataBuffer[2] = 1;
+					DataBuffer[3] = 1;
+					DataBuffer[4] = 0;
+					break;
+			}
+		}
 	ready = 1;
 	}
 
 }
 
 
-
-int main(){
-
+void main()
+{
 	// Initialize USART (with RX interrupt enable)
 	InitUART(9600, 8, 1);
+	// Initialize CTC 
 	InitAtmel();
 	// Global interrupt enable
 	sei();
 	while (1)
 	{
-		// Her kunne man lave noget "fornuftigt"
+		//nothing
 	}
-
+	
 }
