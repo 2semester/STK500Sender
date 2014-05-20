@@ -18,14 +18,7 @@ sætter skifter 1 ind på dataen og sætter data cyclen +1 for at se om vi er færdi
 flag sættes til volitile da den skifter uden at vi bruger den i koden.
 og initieret til 1 pga vi starter på 10 = 1 burst.
 ----------------------------------------------------------------------*/
-volatile int currentBitPattern = 0;
-volatile uint8_t flag = 1;
-volatile int sendcycel = 0;
-volatile int ready = 0;
-int temp[9] = 0;
-int failsafe = 0;
-int DataBuffer[33];
- 
+
  
 void Burst(void)
 {
