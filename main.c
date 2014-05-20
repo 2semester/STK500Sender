@@ -50,7 +50,7 @@ ISR(INT2_vect) //INT2 til 'flag'
                  
                  if(flag % 2 == 1)
                  {
-					if (DataBuffer[sendcounter] == 0)
+					if (DataBuffer[sendcounter] == 1)
 					{
 						Burst();
 					}
@@ -68,13 +68,57 @@ ISR(INT2_vect) //INT2 til 'flag'
                  ready = 0;
          }    
  }
+ /*
+ 
+ 
+ 
+ */
+ 
 ISR (USART_RXC_vect){
 	char Buffer[4];
-	
-	
 	ReadString(&Buffer,ARRAY);
 	if (Buffer[0] == '!' || Buffer[0] == '?')
 	{
+		if (Buffer[2] == '0')
+		{
+		switch (Buffer[1]) 
+			case '1' : DataBuffer[5] = {0,0,0,1,1}; ready = 1; break;
+			case '2' : DataBuffer[5] = {0,0,1,0,1}; ready = 1; break;
+			case '3' : DataBuffer[5] = {0,0,1,1,1}; ready = 1; break;
+			case '4' : DataBuffer[5] = {0,1,0,0,1}; ready = 1; break;
+			case '5' : DataBuffer[5] = {0,1,0,1,1}; ready = 1; break;
+			case '6' : DataBuffer[5] = {0,1,1,0,1}; ready = 1; break;
+			case '7' : DataBuffer[5] = {0,1,1,1,1}; ready = 1; break;
+			case '8' : DataBuffer[5] = {1,0,0,0,1}; ready = 1; break;
+			case '9' : DataBuffer[5] = {1,0,0,1,1}; ready = 1; break;
+			case 'a' : DataBuffer[5] = {1,0,1,0,1}; ready = 1; break;
+			case 'b' : DataBuffer[5] = {1,0,1,1,1}; ready = 1; break;
+			case 'c' : DataBuffer[5] = {1,1,0,0,1}; ready = 1; break;
+			case 'd' : DataBuffer[5] = {1,1,0,1,1}; ready = 1; break;
+			case 'e' : DataBuffer[5] = {1,1,1,0,1}; ready = 1; break;
+			case 'f' : DataBuffer[5] = {1,1,1,1,1}; ready = 1; break;
+		}
+		if (Buffer[2] == 'f')
+		{
+		switch (Buffer[1])
+			case '1' : DataBuffer[5] = {0,0,0,1,0}; ready = 1; break;
+			case '2' : DataBuffer[5] = {0,0,1,0,0}; ready = 1; break;
+			case '3' : DataBuffer[5] = {0,0,1,1,0}; ready = 1; break;
+			case '4' : DataBuffer[5] = {0,1,0,0,0}; ready = 1; break;
+			case '5' : DataBuffer[5] = {0,1,0,1,0}; ready = 1; break;
+			case '6' : DataBuffer[5] = {0,1,1,0,0}; ready = 1; break;
+			case '7' : DataBuffer[5] = {0,1,1,1,0}; ready = 1; break;
+			case '8' : DataBuffer[5] = {1,0,0,0,0}; ready = 1; break;
+			case '9' : DataBuffer[5] = {1,0,0,1,0}; ready = 1; break;
+			case 'a' : DataBuffer[5] = {1,0,1,0,0}; ready = 1; break;
+			case 'b' : DataBuffer[5] = {1,0,1,1,0}; ready = 1; break;
+			case 'c' : DataBuffer[5] = {1,1,0,0,0}; ready = 1; break;
+			case 'd' : DataBuffer[5] = {1,1,0,1,0}; ready = 1; break;
+			case 'e' : DataBuffer[5] = {1,1,1,0,0}; ready = 1; break;
+			case 'f' : DataBuffer[5] = {1,1,1,1,0}; ready = 1; break;
+
+		}		
+		/*
 		for(int i = 0;i < 4; i++)
 		{
 			char tmpBuffer[9];
@@ -83,6 +127,7 @@ ISR (USART_RXC_vect){
 			SendString("lol");
 			SendString(DataBuffer);
 		}
+		*/
 	ready = 1;
 	}
 

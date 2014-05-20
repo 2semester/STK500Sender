@@ -12,11 +12,7 @@ template
  
  
 /*---------------------------------------------------------------------
-skifter hendholdvis mellem 1 og 0 for at simulere 10 = 1 og 01 = 0.
-checker om modtaget data = 0 på en 0 cycle eller 1 på en 1 cycel og sender så burst
-sætter skifter 1 ind på dataen og sætter data cyclen +1 for at se om vi er færdige.
-flag sættes til volitile da den skifter uden at vi bruger den i koden.
-og initieret til 1 pga vi starter på 10 = 1 burst.
+sætter CTC til output i 3ms og sætter den så til input
 ----------------------------------------------------------------------*/
 
  
@@ -54,13 +50,11 @@ udregning for 120khz ctc signal
 linje for linje
  
 Input for INT2 on PB2 & CTC PB0
-Output for LEDs
 INT2:Rising edge
 Enable extern interrupts INT2
 CTC - Mode 2 - No prescale
 CTC - couter initial value
 CTC - counter compare interrupt
-enable global interrupts
 ---------------------------------------------------------------------*/
  void InitAtmel(void)
  {
@@ -72,24 +66,5 @@ enable global interrupts
 	 TIMSK |=(1<<OCIE0);
  }
  
- 
- 
-/*---------------------------------------------------------------------
-toggler via XOR PORTC
- 
- if(TCNT0 >= OCR0_VALUE)
- {
-         CTCBurst();
- }
-----------------------------------------------------------------------*/
- 
- void switchSetCTC(void)
- {
-         DDRB |=(1<<PB3);
-         _delay_ms(1);
-         PORTC = 0b01111111;
-         _delay_ms(500);
-         DDRB |=(0<<PB3);
- }
  
  
