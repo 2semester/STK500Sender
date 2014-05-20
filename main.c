@@ -5,7 +5,7 @@
 #include "X10send.h"
 
 
-/*---------------------------------------------------------------------
+/*--------------------------------------------------------------------5w-
 når der kommer et zero crossing interrupt
 flag tælles 1 op
 der checkes for om ny data er modtaget
@@ -28,7 +28,7 @@ if(ready == 1)
 
     if(flag % 2 == 1)  // 1 cycel
     {
-	    if (DataBuffer[sendcounter] == 1)
+	    if (DataBuffer[sendcounter] == '1')
 	    {
 		    Burst();
 		    sendcounter++;
@@ -43,7 +43,7 @@ if(ready == 1)
 
 	if(flag % 2 == 0) // 0 cycel
     {
-		if (DataBuffer[sendcounter] == 0)
+		if (DataBuffer[sendcounter] == '0')
         {
 				if (failsafe == 0)
 				{
@@ -60,11 +60,11 @@ if(ready == 1)
     if (sendcounter == 5)
     {
 		ready = 0;
-		DataBuffer[0] = 0;
-		DataBuffer[1] = 0;
-		DataBuffer[2] = 0;
-		DataBuffer[3] = 0;
-		DataBuffer[4] = 0;
+		DataBuffer[0] = '0';
+		DataBuffer[1] = '0';
+		DataBuffer[2] = '0';
+		DataBuffer[3] = '0';
+		DataBuffer[4] = '0';
 	}		
 }
 } 
@@ -87,116 +87,116 @@ ISR (USART_RXC_vect)
 			switch (Buffer[1])
 			{ 
 				case '1' ://DataBuffer[5] = {0,0,0,1,1}; 
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1; 
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1'; 
 					break;
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,1}; 
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;				 
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';				 
 					break;
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,1};  
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,1}; 
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,1}; 
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,1};  
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,1}; 
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,1};  
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,1};  
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,1}; 
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,1};  
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,1}; 
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 
 				case 'd' ://DataBuffer[5] = {1,1,0,1,1};
 			 
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '1';
 					break;
 
 				case 'e' :// DataBuffer[5] = {1,1,1,0,1};  
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 1;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '1';
 					break;
 			}
 		}
@@ -206,123 +206,123 @@ ISR (USART_RXC_vect)
 			switch (Buffer[1])
 			{
 				case '1' ://DataBuffer[5] = {0,0,0,1,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case '2' ://DataBuffer[5] = {0,0,1,0,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case '3' ://DataBuffer[5] = {0,0,1,1,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case '4' ://DataBuffer[5] = {0,1,0,0,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case '5' ://DataBuffer[5] = {0,1,0,1,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case '6' ://DataBuffer[5] = {0,1,1,0,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case '7' ://DataBuffer[5] = {0,1,1,1,0};
-					DataBuffer[0] = 0;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '0';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case '8' :// DataBuffer[5] = {1,0,0,0,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case '9' ://DataBuffer[5] = {1,0,0,1,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'a' ://DataBuffer[5] = {1,0,1,0,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'b' ://DataBuffer[5] = {1,0,1,1,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 0;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '0';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'c' ://DataBuffer[5] = {1,1,0,0,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'd' ://DataBuffer[5] = {1,1,0,1,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 0;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '0';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'e' :// DataBuffer[5] = {1,1,1,0,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 0;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '0';
+					DataBuffer[4] = '0';
 					break;
 
 				case 'f' ://DataBuffer[5] = {1,1,1,1,0};
-					DataBuffer[0] = 1;
-					DataBuffer[1] = 1;
-					DataBuffer[2] = 1;
-					DataBuffer[3] = 1;
-					DataBuffer[4] = 0;
+					DataBuffer[0] = '1';
+					DataBuffer[1] = '1';
+					DataBuffer[2] = '1';
+					DataBuffer[3] = '1';
+					DataBuffer[4] = '0';
 					break;
 			}
 		}
