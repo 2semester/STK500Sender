@@ -19,18 +19,21 @@ når 5 bit er sent sættes ready til 0 samt '\0' sendes for indikere at vi har en 
 ----------------------------------------------------------------------*/
 ISR(INT2_vect)
 {
-flag++;
 if(ready == 1)
 {
+	if(readycheck == 2){
+	flag++;
     if(flag % 2 == 1)  // foerste cycel
     {
 	    if (DataBuffer[sendcounter] == '1')
 	    {
 		    Burst();
+			SendString("1");
 	    }
 	    else
 	    {
 		    //nothing
+			SendString("0");
 	    }
 	    
     }
@@ -40,20 +43,33 @@ if(ready == 1)
 		if (DataBuffer[sendcounter] == '0')
         {
 			Burst();
+			SendString("1");
 		}
 		else
 		{
 			//nothing
+			SendString("0");
 		}
 		sendcounter++;
     }
-       
+	}
+		if(readycheck == 0){
+			Burst();
+			SendString("1");
+			readycheck = 1;
+		}
+		if(readycheck == 1){
+			Burst();
+			SendString("1");
+			readycheck = 2;
+		}
     if (sendcounter == 20)
     {
 		sendcounter = 0;
 		SendString("done sending stuff");
 		ready = 0;
 		DataBuffer[0] = '\0';
+		readycheck = 0;
 	}		
 }
 }
@@ -257,7 +273,7 @@ ISR (USART_RXC_vect)
 		DataBuffer[19] = '1';
 		DataBuffer[20] = '\0';
 		
-		SendString(DataBuffer);
+		//SendString(DataBuffer);
 		ready = 1;
 	}
 
