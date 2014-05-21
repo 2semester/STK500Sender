@@ -1,8 +1,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "X10send.h"
 #include <util/delay.h>
 #include <stdint-gcc.h>
-#include "X10send.h"
 
  /*---------------------------------------------------------------------
 toggle 3ms burst
@@ -12,9 +12,9 @@ sætter CTC til output i 3ms og sætter den så til input
  
 void Burst(void)
 {
-    DDRB |=(1<<PB3);
+    DDRD |=(1<<PD7);
     _delay_ms(3);
-	DDRB |=(0<<PB3);	   
+	DDRD &= ~(1<<PD7);	   
 }
  
  
@@ -32,12 +32,14 @@ udregning for 120khz ctc signal
  1200005
  
 ---------------------------------------------------------------------*/
-#define OCR0_VALUE 14
- ISR(TIMER0_COMP_vect)
+#define OCR2_VALUE 14
+ /*
+ ISR(TIMER2_COMP_vect)
  {
-         OCR0 = (uint8_t)OCR0_VALUE;
+         OCR2 = (uint8_t)OCR2_VALUE;
  }
  
+ */
  
  
 /*---------------------------------------------------------------------
@@ -52,12 +54,14 @@ CTC - counter compare interrupt
 ---------------------------------------------------------------------*/
  void InitAtmel(void)
  {
-	 DDRB |= (0<<PB2) | (0<<PB0);
+	 DDRB |= (0<<PB2);
+	 DDRD |= (0<<PD7);
 	 MCUCSR = 0b01000000;
 	 GICR |= 0b00100000;
-	 TCCR0 = 0b01101001;
-	 TCNT0 = 0;
+	 TCCR2 = 0b00011001;
+	 TCNT2 = 0;
 	 TIMSK |=(1<<OCIE0);
+	 OCR2 = (uint8_t)OCR2_VALUE;
  }
  
  
