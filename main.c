@@ -226,7 +226,7 @@ ISR (USART_RXC_vect)
 			DataBuffer[6] = '0';
 			DataBuffer[7] = '0';
 			DataBuffer[8] = '0';
-			DataBuffer[9] = '1';
+			DataBuffer[9] = '0';
 			DataBuffer[10] = '\0';
 			break;
 		}
@@ -245,8 +245,8 @@ ISR (USART_RXC_vect)
 			DataBuffer[10] = '1';
 			DataBuffer[11] = '0';
 			DataBuffer[12] = '0';
-			DataBuffer[13] = '1';
-			DataBuffer[14] = '0';
+			DataBuffer[13] = '0';
+			DataBuffer[14] = '1';
 			DataBuffer[15] = '\0';
 			break;
 		}

@@ -678,8 +678,8 @@ ISR (USART_RXC_vect)
 
 			case 'e' :// DataBuffer[5] = {1,1,1,0,1};
 			DataBuffer[5] = '1';
- 438:	91 e3       	ldi	r25, 0x31	; 49
- 43a:	90 93 83 00 	sts	0x0083, r25
+ 438:	81 e3       	ldi	r24, 0x31	; 49
+ 43a:	80 93 83 00 	sts	0x0083, r24
 			DataBuffer[6] = '0';
  43e:	80 e3       	ldi	r24, 0x30	; 48
  440:	80 93 84 00 	sts	0x0084, r24
@@ -687,8 +687,8 @@ ISR (USART_RXC_vect)
  444:	80 93 85 00 	sts	0x0085, r24
 			DataBuffer[8] = '0';
  448:	80 93 86 00 	sts	0x0086, r24
-			DataBuffer[9] = '1';
- 44c:	90 93 87 00 	sts	0x0087, r25
+			DataBuffer[9] = '0';
+ 44c:	80 93 87 00 	sts	0x0087, r24
 			DataBuffer[10] = '\0';
  450:	10 92 88 00 	sts	0x0088, r1
 			break;
@@ -727,10 +727,10 @@ ISR (USART_RXC_vect)
  482:	80 93 89 00 	sts	0x0089, r24
 			DataBuffer[12] = '0';
  486:	80 93 8a 00 	sts	0x008A, r24
-			DataBuffer[13] = '1';
- 48a:	90 93 8b 00 	sts	0x008B, r25
-			DataBuffer[14] = '0';
- 48e:	80 93 8c 00 	sts	0x008C, r24
+			DataBuffer[13] = '0';
+ 48a:	80 93 8b 00 	sts	0x008B, r24
+			DataBuffer[14] = '1';
+ 48e:	90 93 8c 00 	sts	0x008C, r25
 			DataBuffer[15] = '\0';
 			break;
 		}
