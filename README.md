@@ -1,4 +1,0 @@
-STK500Sender
-============
-
-Sender

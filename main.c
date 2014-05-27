@@ -4,8 +4,6 @@
 #include "main.h"
 #include "X10send.h"
 #include "uart_test.h"
-
-
 /*--------------------------------------------------------------------5w-
 når der kommer et zero crossing interrupt
 flag tælles 1 op

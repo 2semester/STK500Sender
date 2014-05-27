@@ -1,16 +1,3 @@
-/****************************************************
-* "uart_int.c":                                     *
-* Implementation file for the Meaga32 UART driver.  *
-* RX interrupt can be enabled during initialization.* 
-* The driver does not handle the RX interrupts.     *
-*                                                   *
-*  STK500 setup:                                    *
-*  Header "RS232 spare" connected to RXD/TXD:       *
-*  RXD = PORTD, bit0                                *
-*  TXD = PORTD, bit1                                *
-*                                                   *
-* Henning Hargaard, 3/11 2011                       *
-*****************************************************/
 #include <avr/io.h>
 #include <stdlib.h>
 #include "uart_int.h"

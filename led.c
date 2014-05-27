@@ -1,9 +1,3 @@
-/*************************************************
-* "LED.C":                                       *
-* Implementation file for the STK500 LED driver. *
-* The LEDs are connected to PC pins.             *
-* Henning Hargaard, 27/9 2011                    *
-**************************************************/
 #include <avr/io.h>
 
 #define MAX_LED_NR 7

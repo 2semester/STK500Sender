@@ -1,15 +1,3 @@
-/********************************************
-* MSYS, LAB 12                              *
-* Test program for Interrupt driven UART    *
-* driver.                                   *
-*                                           *
-* STK500 setup:                             *
-* Header "RS232 spare" connected to RXD/TXD *
-*   RXD = PORTD, bit0                       *
-*   TXD = PORTD, bit1                       *
-*                                           *
-* Henning Hargaard 27/11 2013               *
-*********************************************/
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "uart_int.h"
